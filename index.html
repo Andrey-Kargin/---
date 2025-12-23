@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link rel="stylesheet" href="./index.css?v=1.3">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://player.vimeo.com/api/player.js"></script>
+  <title>Smart Light</title>
+</head>
+<body>
+  <header class="header animate__animated animate__slideInDown">
+    <!-- <canvas id="canvas"></canvas> -->
+    <div class="container">
+      <a class="header__logo">
+        <img src="./img/logo.svg" alt="logo" />
+      </a>
+      <span class="mobile desc burger">меню</span>
+      <nav class="header__nav">
+        <a class="header__nav-link desc">О нас</a>
+        <a href="./projects/" class="header__nav-link desc">Проекты</a>
+        <a href="./team/" class="header__nav-link desc">команда</a>
+        <!-- <a href="./blog/" class="header__nav-link desc">блог</a> -->
+        <!-- <div id="blog-links">
+          <a href="#" class="desc header-blog">Как мы создали мировой рекорд</a>
+          <a href="#" class="desc header-blog">За кулисами создания шоу</a>
+          <a href="#" class="desc header-blog">Интерактивные инсталляции</a>
+        </div> -->
+        <button class="header__btn pc pt">обсудить проект</button>
+        <div class="header__contacts mobile">
+          <p class="desc">контакты</p>
+          <div class="header__contacts-text">
+            <a href="tel:" class="desc">+7 777 777 77 77</a>
+            <a href="mailto:" class="desc">smartlight@pro</a>
+          </div>
+          <div class="header__contacts-row">
+            <p class="desc">Создайте незабываемое шоу вместе с нами</p>
+            <button class="header__btn">обсудить проект</button>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <div class="popup">
+      <div class="popup__container">
+        <h2 class="popup-form__text title">Обсудить проект</h2>
+          <form action="" method="POST" id="ajax_form1" class="popup-form">
+          <div class="form-row">
+            <input type="hidden" name="userForm" value="Smartlight - главная форма на странице">
+            <input type="text" class="form__input desc"  name="userName1" placeholder="ИМЯ*" />
+            <input type="text" class="form__input desc" name="userSurname1" placeholder="ФАМИЛИЯ*" />
+          </div>
+          <div class="form-row">
+            <input type="text" class="form__input desc" name="userMail1" placeholder="E-MAIL*" />
+            <input type="text" class="form__input desc"  name="userPhone1" placeholder="ТЕЛЕФОН*" />
+          </div>
+
+          <input type="text" class="form__input desc" name="userCompany1" placeholder="КОМПАНИЯ*" />
+          <textarea class="form__textarea desc" name="userContext1" placeholder="РАССКАЖИТЕ О ЗАДАЧЕ*"></textarea>
+          <div class="checkbox-policy">
+            <input class="checkbox__input" type="checkbox" id="1" />
+            <label class="checkbox__label desc" for="1">Да, я согласен получать полезный контент <br class="mobile">и новости <br class="pt">от Smartlight</label>
+          </div>
+          <div class="checkbox-policy">
+            <input class="checkbox__input" checked type="checkbox" id="2" />
+            <label class="checkbox__label desc" for="2">я даю Smartlight согласие на обработку моих персональных данных в соответствии <br class="pc mobile">с <a>политикой конфиденциальности*</a></label>
+          </div>
+          <div class="send-form1">
+            <button type="button" id="btn2" class="form-btn desc">ОТПРАВИТЬ →</button>
+            <p class="desc"></p>
+          </div>
+        </form>
+        <div class="desc close-popup">закрыть (Х)</div>
+        <div class="popup-footer">
+          <p class="desc">Вы также можете позвонить <br>или написать нам</p>
+          <div class="popup-column">
+            <a href="tel:" class="desc">+7 777 777 77 77</a>
+            <a href="mailto:smartlight@pro" class="desc">smartlight@pro</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <canvas class="pc" id="canvas"></canvas>
+    <div class="hero-video-bg pt">
+      <video class="text-video" autoplay muted loop playsinline>
+        <source src="/img/hero-bg-pt.mov" type="video/mp4" />
+      </video>
+    </div>
+    <div class="hero-video-bg mobile">
+      <video class="text-video" autoplay muted loop playsinline>
+        <source src="/img/hero-bg-mobile.mov" type="video/mp4" />
+      </video>
+    </div>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-text wow animate__animated animate__slideInUp">
+          <h1 class="title">Создаём свет,</h1>
+          <h2 class="title pc pt">меняющий реальность</h2>
+          <h2 class="title mobile">меняющий</h2>
+          <p class="title mobile">реальность</p>
+        </div>
+        <div class="hero-text-add wow hero-text animate__animated animate__slideInRight">
+          <p class="desc">световые шоу / инсталляции <br>/ 3d-маппинг / мультимедиа</p>
+          <button class="hero-btn">смотреть showreel</button>
+        </div>
+   
+  
+      </div>
+    </section>
+    <div class="video-popup">
+      <div class="desc close-popup-video">закрыть (Х)</div>
+
+    </div>
+    <section class="mission">
+      <div class="container">
+        <div class="stripe pc pt"></div>
+        <div class="stripe pc pt"></div>
+        <div class="stripe pc pt"></div>
+        <div class="stripe pc pt"></div>
+        <div class="stripe pc pt"></div>
+        <h2 class="desc wow animate__animated animate__slideInLeft">миссия</h2>
+        <div class="mission__text wow animate__animated animate__slideInUp">
+          <video class="text-video" autoplay muted loop preload="auto" playsinline>
+            <source src="/img/giphy.mp4" type="video/mp4" />
+          </video>
+          <p class="title">Smartlight — это большая мультимедиа студия<br class="pc mobile"> с фокусом на сложные, <br class="mobile">смелые<br class="pt"> и прорывные проекты. <br></p>
+          <p class="title gif">
+            Пионеры невозможного. 
+          </p>
+        </div>  
+      </div>
+    </section>
+ 
+    <section class="projects">
+      <div class="container">
+        <div class="stripe pc pt"></div>
+        <div class="stripe pc pt"></div>
+        <div class="stripe pc pt"></div>
+        <div class="stripe pc pt"></div>
+        <div class="stripe pc pt"></div>
+        <div class="projects__nav wow animate__animated animate__fadeIn" data-wow-delay="0.1s">
+          <h2 class="desc">Проекты</h2>
+          <!-- <div class="projects__list">
+            <p class="list desc">список <span>(23)</span></p>
+            <div class="projects__filter">
+              <p class="desc">фильтры</p>
+            </div>
+          </div>
+
+          <div class="filter-column filter__service">
+            <h3 class="desc filter-title">Услуги</h3>
+            <p class="desc">Продакшн</p>
+            <p class="desc">3d маппинг</p>
+            <p class="desc">Световое шоу</p>
+            <p class="desc">Сценография</p>
+            <p class="desc">Инсталляции</p>
+            <p class="desc">Видеоконтент</p>
+            <p class="desc">3D и 2D анимация</p>
+            <p class="desc">Генеративная графика</p>
+          </div>
+          <div class="filter-column filter__events">
+            <h3 class="desc filter-title">события</h3>
+            <p class="desc">Прогулки</p>
+            <p class="desc">Световые шоу</p>
+            <p class="desc">концерты</p>
+            <p class="desc">выставки</p>
+            <p class="desc">Инсталляции</p>
+            <p class="desc">шоу</p>
+          </div>
+          <div class="filter-column filter__year">
+            <h3 class="desc filter-title">год</h3>
+            <p class="desc">2024</p>
+            <p class="desc">2023</p>
+            <p class="desc">2019</p>
+          </div>
+          <button class="mobile filter-btn">применить</button> -->
+          <a class="desc">Посмотреть все</a>
+        </div>
+
+        <div class="projects__container wow animate__animated animate__slideInUp" data-wow-delay="0.3s">
+          <a href="./projects/project/" class="projects__box wow animate__animated animate__slideInUp" data-wow-delay="0.3s">
+            <div class="projects__box_img">
+              <img src="./img/projects/project1.png" alt="project" />
+            </div>
+            <div class="projects__box_text">
+              <h3 class="desc">2021 / Прогулка</h3>
+              <h4 class="desc">Сад света
+                <br>Легенда о друидах
+                <br>прогулка по дендрарию
+                <br>в сочи</h4>
+                <p class="desc projects-desc-long">Сад света: Легенда о друидах — это захватывающее световое шоу-прогулка по дендрарию в Сочи. Погрузитесь 
+                  <br>в мистический мир древних легенд, где световые инсталляции оживляют магические истории и создают уникальную атмосферу, перенося зрителей в эпоху друидов</p>
+                  <div class="projects-about-long">
+                    <p class="desc">2021</p>
+                    <div class="projects-about-filter">
+                      <p class="desc">световое инсталляции</p>
+                      <p class="desc">3d-мэппинг</p>
+                      <p class="desc">световой дизайн ландшафта</p>
+                    </div>
+                  </div>
+                <span class="desc project__new">новый проект</span>
+            </div>
+          </a>
+          <a href="./projects/project/" class="projects__box wow animate__animated animate__slideInUp" data-wow-delay="0.3s">
+            <div class="projects__box_img">
+              <img src="./img/projects/project2.png" alt="project" />
+            </div>
+            <div class="projects__box_text">
+              <h3 class="desc">2021 / Прогулка</h3>
+              <h4 class="desc">Сад света
+                <br>Легенда о царице ночи
+                <br>прогулка по дендрарию
+                <br>санкт-петербурга</h4>
+                <p class="desc projects-desc-long">Сад света: Легенда о друидах — это захватывающее световое шоу-прогулка по дендрарию в Сочи. Погрузитесь 
+                  <br>в мистический мир древних легенд, где световые инсталляции оживляют магические истории и создают уникальную атмосферу, перенося зрителей в эпоху друидов</p>
+                  <div class="projects-about-long">
+                    <p class="desc">2021</p>
+                    <div class="projects-about-filter">
+                      <p class="desc">световое инсталляции</p>
+                      <p class="desc">3d-мэппинг</p>
+                      <p class="desc">световой дизайн ландшафта</p>
+                    </div>
+                  </div>
+            </div>
+          </a>
+          <a href="./projects/project/" class="projects__box wow animate__animated animate__slideInUp" data-wow-delay="0.3s">
+            <div class="projects__box_img">
+              <img src="./img/projects/project3.png" alt="project" />
+            </div>
+            <div class="projects__box_text">
+              <h3 class="desc">2019 / Фестиваль</h3>
+              <h4 class="desc">театральная олимпиада
+                <br>фестиваль россии и японии</h4>
+                <p class="desc projects-desc-long">Сад света: Легенда о друидах — это захватывающее световое шоу-прогулка по дендрарию в Сочи. Погрузитесь 
+                  <br>в мистический мир древних легенд, где световые инсталляции оживляют магические истории и создают уникальную атмосферу, перенося зрителей в эпоху друидов</p>
+                  <div class="projects-about-long">
+                    <p class="desc">2021</p>
+                    <div class="projects-about-filter">
+                      <p class="desc">световое инсталляции</p>
+                      <p class="desc">3d-мэппинг</p>
+                      <p class="desc">световой дизайн ландшафта</p>
+                    </div>
+                  </div>
+            </div>
+          </a>
+          <a href="./projects/project/" class="projects__box wow animate__animated animate__slideInUp" data-wow-delay="0.3s">
+            <div class="projects__box_img">
+              <img src="./img/projects/project4.png" alt="project" />
+            </div>
+            <div class="projects__box_text">
+              <h3 class="desc">2019 / Фестиваль</h3>
+              <h4 class="desc">театральная олимпиада
+                <br>фестиваль россии и японии</h4>
+                <p class="desc projects-desc-long">Сад света: Легенда о друидах — это захватывающее световое шоу-прогулка по дендрарию в Сочи. Погрузитесь 
+                  <br>в мистический мир древних легенд, где световые инсталляции оживляют магические истории и создают уникальную атмосферу, перенося зрителей в эпоху друидов</p>
+                  <div class="projects-about-long">
+                    <p class="desc">2021</p>
+                    <div class="projects-about-filter">
+                      <p class="desc">световое инсталляции</p>
+                      <p class="desc">3d-мэппинг</p>
+                      <p class="desc">световой дизайн ландшафта</p>
+                    </div>
+                  </div>
+            </div>
+          </a>
+          <a href="./projects/project/" class="projects__box wow animate__animated animate__slideInUp" data-wow-delay="0.3s">
+            <div class="projects__box_img">
+              <img src="./img/projects/project5.png" alt="project" />
+            </div>
+            <div class="projects__box_text">
+              <h3 class="desc">2019 / концерт</h3>
+              <h4 class="desc">Световое шоу на концерте
+                <br>муммий троль
+                <br>formula 1 vtb russian grand prix в cочи</h4>
+                <p class="desc projects-desc-long">Сад света: Легенда о друидах — это захватывающее световое шоу-прогулка по дендрарию в Сочи. Погрузитесь 
+                <br>в мистический мир древних легенд, где световые инсталляции оживляют магические истории и создают уникальную атмосферу, перенося зрителей в эпоху друидов</p>
+                <div class="projects-about-long">
+                  <p class="desc">2021</p>
+                  <div class="projects-about-filter">
+                    <p class="desc">световое инсталляции</p>
+                    <p class="desc">3d-мэппинг</p>
+                    <p class="desc">световой дизайн ландшафта</p>
+                  </div>
+                </div>
+            </div>
+          </a>
+          <a href="./projects/project/" class="projects__box wow animate__animated animate__slideInUp" data-wow-delay="0.3s">
+            <div class="projects__box_img">
+              <img src="./img/projects/project6.png" alt="project" />
+            </div>
+            <div class="projects__box_text">
+              <h3 class="desc">2018 / маппинг</h3>
+              <h4 class="desc">ужин консула государства катар в санкт-петербурге</h4>
+              <p class="desc projects-desc-long">Сад света: Легенда о друидах — это захватывающее световое шоу-прогулка по дендрарию в Сочи. Погрузитесь 
+                <br>в мистический мир древних легенд, где световые инсталляции оживляют магические истории и создают уникальную атмосферу, перенося зрителей в эпоху друидов</p>
+                <div class="projects-about-long">
+                  <p class="desc">2021</p>
+                  <div class="projects-about-filter">
+                    <p class="desc">световое инсталляции</p>
+                    <p class="desc">3d-мэппинг</p>
+                    <p class="desc">световой дизайн ландшафта</p>
+                  </div>
+                </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+    <section class="service">
+      <div class="container">
+        <div class="stripe pc pt"></div>
+        <div class="stripe pc pt"></div>
+        <div class="stripe pc pt"></div>
+        <div class="stripe pc pt"></div>
+        <div class="stripe pc pt"></div>
+        <div class="service__top">
+          <h2 class="desc wow animate__animated animate__slideInLeft">Услуги</h2>
+          <p class="title wow animate__animated animate__slideInUp">Мы превращаем любую идею в реальность: 
+            <br class="pc pt">от световых шоу и 3D-маппинга 
+            <br class="pc pt">до интерактивных инсталляций 
+            <br class="pc pt">и архитектурных проекций — <span>мы можем все</span></p>
+        </div>
+        <div class="service__info">
+          <nav class="service__info_nav swiper mobile wow animate__animated animate__slideInLeft">
+            <div class="swiper-wrapper">
+              <a class="service__info_nav-link service__info_nav-link_active swiper-slide" data-tab="service1">световые шоу</a>
+              <a class="service__info_nav-link swiper-slide" data-tab="service2">3d-маппинг</a>
+              <a class="service__info_nav-link swiper-slide" data-tab="service3">интерактивные инсталляции</a>
+              <a class="service__info_nav-link swiper-slide" data-tab="service4">мультимедиа контент</a>
+              <a class="service__info_nav-link swiper-slide" data-tab="service5">дрон-шоу</a>
+              <a class="service__info_nav-link swiper-slide" data-tab="service6">парки и прогулки</a>
+            </div>
+          </nav>
+          <nav class="service__info_nav pc pt wow animate__animated animate__slideInLeft">
+            <a class="service__info_nav-link service__info_nav-link_active " data-tab="service1">световые шоу</a>
+            <a class="service__info_nav-link" data-tab="service2">3d-маппинг</a>
+            <a class="service__info_nav-link" data-tab="service3">интерактивные инсталляции</a>
+            <a class="service__info_nav-link" data-tab="service4">мультимедиа контент</a>
+            <a class="service__info_nav-link" data-tab="service5">дрон-шоу</a>
+            <a class="service__info_nav-link" data-tab="service6">парки и прогулки</a>
+          </nav>
+          <div class="service__info_box service__info_box_active wow animate__animated animate__slideInUp" id="service1">
+            <div class="service__info_img">
+              <img src="./img/services/venue.png" alt="image" />
+            </div>
+            <h2 class="desc">
+              Наша команда разработает визуальную концепцию, составит световую партитуру, создаст необходимые декорации 
+              <br>и осуществит техническое сопровождение</h2>
+            <a class="desc">подробнее ></a>
+          </div>
+          <div class="service__info_box" id="service2">
+            <div class="service__info_img">
+              <img src="./img/services/show.jpg" alt="image" />
+            </div>
+            <h2 class="desc">
+              Иммерсивные ужины, перфомансы, концерты, театральная сценография, продуктовые презентации</h2>
+            <a class="desc">подробнее ></a>
+          </div>
+          <div class="service__info_box" id="service3">
+            <div class="service__info_img">
+              <img src="./img/services/arc.jpg" alt="image" />
+            </div>
+            <h2 class="desc">
+              3D naked eye экраны, интерактивное LED pixel освещение, видеомэппинг </h2>
+            <a class="desc">подробнее ></a>
+          </div>
+          <div class="service__info_box" id="service4">
+            <div class="service__info_img">
+              <img src="./img/services/inst.jpg" alt="image" />
+            </div>
+            <h2 class="desc">
+              Интерактивные арт-объекты, нейросетевые фотозоны, фиджитализация общественных пространств</h2>
+            <a class="desc">подробнее ></a>
+          </div>
+          <div class="service__info_box" id="service5">
+            <div class="service__info_img">
+              <img src="./img/services/lightshow.png" alt="image" />
+            </div>
+            <h2 class="desc">
+              Наша команда разработает визуальную концепцию, составит световую партитуру, создаст необходимые декорации 
+              <br>и осуществит техническое сопровождение</h2>
+            <a class="desc">подробнее ></a>
+          </div>
+          <div class="service__info_box" id="service6">
+            <div class="service__info_img">
+              <img src="./img/services/lightshow.png" alt="image" />
+            </div>
+            <h2 class="desc">
+              Наша команда разработает визуальную концепцию, составит световую партитуру, создаст необходимые декорации 
+              <br>и осуществит техническое сопровождение</h2>
+            <a class="desc">подробнее ></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="principle">
+      <div class="container">
+        <div class="stripe pc pt"></div>
+        <div class="stripe pc pt"></div>
+        <div class="stripe pc pt"></div>
+        <div class="stripe pc pt"></div>
+        <div class="stripe pc pt"></div>
+        <h2 class="desc wow animate__animated animate__slideInLeft">принципы работы</h2>
+        <div class="principle__nav">
+          <p class="subtitle principle__nav-point principle__nav-point_active" data-tab="tab_1">01. Индивидуальность</p>
+
+          <p class="subtitle principle-text principle-text_active" id="tab_1">Мы начинаем с глубокого понимания вашего 
+            Каждый проект — это новая история, которая требует своего языка и настроения. Мы начинаем с глубокого погружения в идею и цели, чтобы создать уникальную концепцию.
+          </p>
+
+          <p class="subtitle principle__nav-point" data-tab="tab_2">02. Инновации</p>
+
+
+          <p class="subtitle principle-text"  id="tab_2">Мы начинаем с глубокого понимания вашего 
+            Для нас не существует невозможного — только дерзкие идеи, новейшие технологии и смелые эксперименты, которые превращают стандартные проекты в прорывные. Мы создаем будущее, делая его частью вашего проекта уже сегодня.
+          </p>
+
+          <p class="subtitle principle__nav-point" data-tab="tab_3">03. Полный цикл</p>
+
+          <p class="subtitle principle-text"  id="tab_3">Мы начинаем с глубокого понимания вашего 
+            От первой идеи до последнего штриха — мы берем на себя все этапы работы. Технический расчет, творческая разработка, интеграция и реализация на площадке — наша команда работает синхронно, чтобы вы получили результат, который не требует доработок.
+          </p>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="advantages">
+      <div class="container">
+        <div class="stripe pc pt"></div>
+        <div class="stripe pc pt"></div>
+        <div class="stripe pc pt"></div>
+        <div class="stripe pc pt"></div>
+        <div class="stripe pc pt"></div>
+        <h2 class="desc wow animate__animated animate__slideInLeft">наши преимущества</h2>
+        <div id="advantages" class="advantages__container wow animate__animated animate__slideInUp">
+          <div class="advantages__box">
+            <h3 class="advantages__number" data-target="74">0</h3>
+            <p class="advantages__text">Реализованных проекта</p>
+          </div>
+          <div class="advantages__box">
+            <h3 class="advantages__number" data-target="100" data-format="percent">0%</h3>
+            <p class="advantages__text">выполнение сроков</p>
+          </div>
+          <div class="advantages__box">
+            <h3 class="advantages__number" data-target="15">0</h3>
+            <p class="advantages__text">лет опыта в индустрии</p>
+          </div>
+          <div class="advantages__box">
+            <h3 class="advantages__number" data-target="500000" data-format="spaced">0</h3>
+            <p class="advantages__text">зрителей видели наши шоу</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- <section class="project-video wow animate__animated animate__fadeIn" data-wow-delay="1s">
+      <div class="container">
+        <video id="v">
+          <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4" />
+        </video>
+        <div class="video-info">
+          <p class="desc video-title">smartlight: как мы подходим к процессу работы</p>
+          <div id="current-time" class="desc">00:00</div>
+          <p id="b" class="desc">смотреть</p>
+        </div>
+      </div>
+    </section> -->
+    <section class="project-video">
+      <div class="container">
+        <div class="stripe pc pt"></div>
+        <div class="stripe pc pt"></div>
+        <div class="stripe pc pt"></div>
+        <div class="stripe pc pt"></div>
+        <div class="stripe pc pt"></div>
+          <div class="iframe-wrapper">
+              <iframe 
+                  id="vimeo-player" 
+                  src="https://player.vimeo.com/video/1019806168?api=1&player_id=v&controls=0" 
+                  frameborder="0" 
+                  allow="autoplay; fullscreen" 
+                  allowfullscreen>
+              </iframe>
+          </div>
+          <div class="video-info">
+              <p class="desc video-title">smartlight: как мы подходим к процессу работы</p>
+              <div id="current-time" class="desc">00:00</div>
+              <p id="b" class="desc">смотреть</p>
+          </div>
+      </div>
+  </section>
+  
+
+    <section class="hero-form">
+      <div class="container">
+        <div class="stripe pc pt"></div>
+        <div class="stripe pc pt"></div>
+        <div class="stripe pc pt"></div>
+        <div class="stripe pc pt"></div>
+        <div class="stripe pc pt"></div>
+        <div class="hero-form__text">
+          <video class="text-video" autoplay muted loop preload="auto" playsinline>
+            <source src="/img/giphy.mp4" type="video/mp4" />
+          </video>
+          <h2 class=" title wow animate__animated animate__slideInLeft">Свяжитесь с нами 
+            <br>и вместе мы создадим впечатляющее шоу</h2>
+        </div>
+        <form action="" method="POST" id="ajax_form" class="form wow animate__animated animate__slideInUp">
+          <div class="form-row">
+            <input type="hidden" name="userForm" value="Smartlight - главная форма на странице">
+            <input type="text" class="form__input desc"  name="userName" placeholder="ИМЯ*" />
+            <input type="text" class="form__input desc" name="userSurname" placeholder="ФАМИЛИЯ*" />
+          </div>
+          <div class="form-row">
+            <input type="text" class="form__input desc" name="userMail" placeholder="E-MAIL*" />
+            <input type="text" class="form__input desc"  name="userPhone" placeholder="ТЕЛЕФОН*" />
+          </div>
+
+          <input type="text" class="form__input desc" name="userCompany" placeholder="КОМПАНИЯ*" />
+          <textarea class="form__textarea desc" name="userContext" placeholder="РАССКАЖИТЕ О ЗАДАЧЕ*"></textarea>
+          <div class="checkbox-policy">
+            <input class="checkbox__input" type="checkbox" id="1" />
+            <label class="checkbox__label desc" for="1">Да, я согласен получать полезный контент <br class="mobile">и новости <br class="pt">от Smartlight</label>
+          </div>
+          <div class="checkbox-policy">
+            <input class="checkbox__input" checked type="checkbox" id="2" />
+            <label class="checkbox__label desc" for="2">я даю Smartlight согласие на обработку моих персональных данных в соответствии <br class="pc mobile">с <a>политикой конфиденциальности*</a></label>
+          </div>
+          <div class="send-form">
+            <button type="button" id="btn1" class="form-btn desc">ОТПРАВИТЬ →</button>
+            <p class="desc"></p>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- <section class="blog wow animate__animated animate__fadeIn">
+      <div class="container">
+        <div class="blog__top">
+          <h2 class="desc">Блог</h2>
+          <a class="desc">посмотреть все</a>
+        </div>
+        <div class="blog__container">
+          <div class="blog__box">
+            <div class="blog__box_img">
+              <img src="./img/blog/blog1.png" alt="img" />
+            </div>
+            <h3 class="desc">Как световые шоу меняют восприятие пространства</h3>
+            <p class="desc">24 августа 2024 <span>/ читать →</span></p>
+          </div>
+          <div class="blog__box">
+            <div class="blog__box_img">
+              <img src="./img/blog/blog2.png" alt="img" />
+            </div>
+            <h3 class="desc">технологии будущего в мультимедийных инсталляциях: взгляд smartlight</h3>
+            <p class="desc">21 мая 2024 <span>/ читать →</span></p>
+          </div>
+          <div class="blog__box">
+            <div class="blog__box_img">
+              <img src="./img/blog/blog3.png" alt="img" />
+            </div>
+            <h3 class="desc">за кулисами создания иммерсивных световых шоу</h3>
+            <p class="desc">12 октября 2023 <span>/ читать →</span></p>
+          </div>
+          <div class="blog__box">
+            <div class="blog__box_img">
+              <img src="./img/blog/blog4.png" alt="img" />
+            </div>
+            <h3 class="desc">интерактивные инсталляции: как свет становится искусством</h3>
+            <p class="desc">12 июля 2023 <span>/ читать →</span></p>
+          </div>
+        </div>
+      </div>
+    </section> -->
+  </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="stripe pc pt"></div>
+        <div class="stripe pc pt"></div>
+        <div class="stripe pc pt"></div>
+        <div class="stripe pc pt"></div>
+        <div class="stripe pc pt"></div>
+        <div class="footer__container">
+          <div class="footer__logo">
+            <img src="./img/logo.svg" alt="logo" />
+          </div>
+          <nav></nav>
+          <nav class="footer__nav">
+            <a class="footer__nav-link desc">о нас</a>
+            <a class="footer__nav-link desc">проекты</a>
+          </nav>
+          <nav class="footer__nav">
+            <a class="footer__nav-link desc">вакансии</a>
+            <a class="footer__nav-link desc">блог</a>
+            <a class="footer__nav-link desc">контакты</a>
+          </nav>
+          <nav class="footer__nav">
+            <a class="footer__nav-link desc">youtube</a>
+            <a class="footer__nav-link desc">vk</a>
+            <a class="footer__nav-link desc">linkedin</a>
+          </nav>
+          <nav class="footer__nav">
+            <a href="tel:87777777777" class="footer__nav-link desc">+7 777 777 77 77</a>
+            <a href="mailto:smartlight@pro" class="footer__nav-link desc">smartlight@pro</a>
+          </nav>
+          <a href="#" download class="desc footer-btn">скачать презентацию</a>
+        </div>
+        <div class="footer__bottom">
+          <div>
+            <h2 class="desc">© 2024 smartlight</h2>
+            <a class="desc">политика конфиденциальности</a>
+          </div>
+          <p class="desc">ООО «СмартЛайт»</p>
+          <div>
+            <p class="desc">ИНН 7839105487</p>
+            <p class="desc">ОГРН 1187847217700</p>
+          </div>
+          <p class="desc">192020, Россия, г. Санкт-Петербург, ул. Циолковского, дом 13-15, корп. 4, 2Н1</p>
+        </div>
+    </div>
+    </footer>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script src="./js/shader.js"></script>
+  <script src="./js/script.js"></script>
+  
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+    const links = document.querySelectorAll("#blog-links a");
+    let currentIndex = 0;
+
+    function showNextLink() {
+        const previousIndex = currentIndex;
+        currentIndex = (currentIndex + 1) % links.length;
+
+        // Установить плавное исчезновение для предыдущего элемента
+        links[previousIndex].classList.remove("active");
+
+        // Установить плавное появление для текущего элемента
+        links[currentIndex].classList.add("active");
+    }
+
+    // Инициализация: показать первый элемент
+    if (links.length > 0) {
+        links[0].classList.add("active");
+        setInterval(showNextLink, 4000); // Общий цикл с интервалом 4 секунды
+    }
+});
+
+       document.addEventListener('DOMContentLoaded', () => {
+      const advantagesSection = document.getElementById('advantages');
+      if (!advantagesSection) return; // Если элемента нет, ничего не делать
+
+      const numbers = advantagesSection.querySelectorAll('.advantages__number');
+      let hasAnimated = false;
+
+      const animateNumbers = () => {
+        numbers.forEach(number => {
+          const target = +number.dataset.target;
+          const format = number.dataset.format;
+          const increment = Math.ceil(target / 100); // Шаг увеличения
+          let current = 0;
+
+          const updateNumber = () => {
+            current += increment;
+            if (current > target) current = target;
+
+            if (format === 'percent') {
+              number.textContent = `${current}%`;
+            } else if (format === 'spaced') {
+              number.textContent = current.toLocaleString('ru-RU').replace(/\s/g, ' ');
+            } else {
+              number.textContent = current.toLocaleString('ru-RU');
+            }
+
+            if (current < target) {
+              requestAnimationFrame(updateNumber);
+            }
+          };
+
+          updateNumber();
+        });
+      };
+
+      const handleScroll = () => {
+        const sectionTop = advantagesSection.getBoundingClientRect().top;
+        const sectionVisible = window.innerHeight - sectionTop > 100;
+
+        if (sectionVisible && !hasAnimated) {
+          hasAnimated = true;
+          animateNumbers();
+        }
+      };
+
+      window.addEventListener('scroll', handleScroll);
+    });
+    
+    const iframe = document.getElementById("vimeo-player");
+const playButton = document.getElementById("b");
+const iframeWrapper = document.querySelector(".iframe-wrapper");
+const currentTimeDisplay = document.getElementById("current-time");
+const videoInfo = document.querySelector(".video-info");
+
+// Подключаем Vimeo Player API
+const player = new Vimeo.Player(iframe);
+
+let isFirstPlay = true; // Флаг для определения первого запуска
+
+// Обновляем текущее время на дисплее
+function updateTimeDisplay(seconds) {
+    const minutes = Math.floor(seconds / 60);
+    const secs = Math.floor(seconds % 60);
+    currentTimeDisplay.textContent = `${minutes < 10 ? '0' : ''}${minutes}:${secs < 10 ? '0' : ''}${secs}`;
+}
+
+// Получаем продолжительность и устанавливаем начальное состояние
+player.getDuration().then((duration) => {
+    updateTimeDisplay(duration);
+});
+
+// Общая функция для воспроизведения/паузы
+function togglePlayPause() {
+    player.getPaused().then((paused) => {
+        if (paused) {
+            if (isFirstPlay) {
+                player.setCurrentTime(0); // Начинаем с начала только при первом воспроизведении
+                isFirstPlay = false;
+            }
+            player.play();
+            videoInfo.style.display = 'none'; // Скрываем видео-инфо при воспроизведении
+        } else {
+            player.pause();
+            videoInfo.style.display = ''; // Показываем видео-инфо при паузе
+        }
+    });
+}
+
+// Добавляем обработчик на обертку iframe
+iframeWrapper.addEventListener("click", () => {
+    togglePlayPause();
+});
+
+// Обработчик кнопки воспроизведения/паузы
+playButton.addEventListener("click", () => {
+    togglePlayPause();
+});
+
+// Событие обновления времени
+player.on('timeupdate', (event) => {
+    updateTimeDisplay(event.seconds);
+});
+
+
+
+
+    const tabsButtons = document.querySelectorAll('.principle__nav-point')
+
+    const videoBtn = document.querySelector('.hero-btn');
+    const videoPopup = document.querySelector('.video-popup');
+    const closeVideo = document.querySelector('.close-popup-video')
+    const videoElement = document.querySelector('.bg-video'); // Получаем видео элемент
+
+    videoBtn.addEventListener('click', () => {
+      videoPopup.classList.add('video-popup_opened');
+    })
+
+    closeVideo.addEventListener('click', () => {
+      videoPopup.classList.remove('video-popup_opened');
+      videoElement.pause(); // Останавливаем видео
+    })
+
+    
+
+      if (window.innerWidth < 1024) {
+      tabsButtons.forEach(btn => {
+      // вешаем на каждую кнопку обработчик события клик
+        btn.addEventListener('click', () => {
+          // Получаем предыдущую активную кнопку
+          const prevActiveItem = document.querySelector('.principle-text_active');
+          // Получаем предыдущую активную вкладку
+          const prevActiveButton = document.querySelector('.principle__nav-point_active');
+          
+          // Проверяем есть или нет предыдущая активная кнопка
+          if (prevActiveButton) {
+            //Удаляем класс _active у предыдущей кнопки если она есть
+            prevActiveButton.classList.remove('principle__nav-point_active');
+          }
+          
+          // Проверяем есть или нет предыдущая активная вкладка
+          if (prevActiveItem) {
+            // Удаляем класс _active у предыдущей вкладки если она есть
+            prevActiveItem.classList.remove('principle-text_active');
+          }
+          // получаем id новой активной вкладки, который мы перем из атрибута data-tab у кнопки
+          const nextActiveItemId = `#${btn.getAttribute('data-tab')}`;
+          // получаем новую активную вкладку по id
+          const nextActiveItem = document.querySelector(nextActiveItemId);
+          
+          // добавляем класс _active кнопке на которую нажали
+          btn.classList.add('principle__nav-point_active');
+          // добавляем класс _active новой выбранной вкладке
+          nextActiveItem.classList.add('principle-text_active');
+        });
+      })
+    } else {
+      tabsButtons.forEach(btn => {
+      // вешаем на каждую кнопку обработчик события клик
+        btn.addEventListener('mousemove', () => {
+          // Получаем предыдущую активную кнопку
+          const prevActiveItem = document.querySelector('.principle-text_active');
+          // Получаем предыдущую активную вкладку
+          const prevActiveButton = document.querySelector('.principle__nav-point_active');
+          
+          // Проверяем есть или нет предыдущая активная кнопка
+          if (prevActiveButton) {
+            //Удаляем класс _active у предыдущей кнопки если она есть
+            prevActiveButton.classList.remove('principle__nav-point_active');
+          }
+          
+          // Проверяем есть или нет предыдущая активная вкладка
+          if (prevActiveItem) {
+            // Удаляем класс _active у предыдущей вкладки если она есть
+            prevActiveItem.classList.remove('principle-text_active');
+          }
+          // получаем id новой активной вкладки, который мы перем из атрибута data-tab у кнопки
+          const nextActiveItemId = `#${btn.getAttribute('data-tab')}`;
+          // получаем новую активную вкладку по id
+          const nextActiveItem = document.querySelector(nextActiveItemId);
+          
+          // добавляем класс _active кнопке на которую нажали
+          btn.classList.add('principle__nav-point_active');
+          // добавляем класс _active новой выбранной вкладке
+          nextActiveItem.classList.add('principle-text_active');
+        });
+      })
+    }
+
+      
+      if (window.innerWidth > 1024) {
+
+      const serviceButtons = document.querySelectorAll('.service__info_nav-link')
+
+      serviceButtons.forEach(btn => {
+      // вешаем на каждую кнопку обработчик события клик
+        btn.addEventListener('mousemove', () => {
+          // Получаем предыдущую активную кнопку
+          const prevActiveItem = document.querySelector('.service__info_box_active');
+          // Получаем предыдущую активную вкладку
+          const prevActiveButton = document.querySelector('.service__info_nav-link_active');
+          
+          // Проверяем есть или нет предыдущая активная кнопка
+          if (prevActiveButton) {
+            //Удаляем класс _active у предыдущей кнопки если она есть
+            prevActiveButton.classList.remove('service__info_nav-link_active');
+          }
+          
+          // Проверяем есть или нет предыдущая активная вкладка
+          if (prevActiveItem) {
+            // Удаляем класс _active у предыдущей вкладки если она есть
+            prevActiveItem.classList.remove('service__info_box_active');
+          }
+          // получаем id новой активной вкладки, который мы перем из атрибута data-tab у кнопки
+          const nextActiveItemId = `#${btn.getAttribute('data-tab')}`;
+          // получаем новую активную вкладку по id
+          const nextActiveItem = document.querySelector(nextActiveItemId);
+          
+          // добавляем класс _active кнопке на которую нажали
+          btn.classList.add('service__info_nav-link_active');
+          // добавляем класс _active новой выбранной вкладке
+          nextActiveItem.classList.add('service__info_box_active');
+        });
+      })
+    }
+
+ 
+
+    if (window.innerWidth < 1024) {
+
+        const serviceButtons = document.querySelectorAll('.service__info_nav-link')
+
+        serviceButtons.forEach(btn => {
+        // Вешаем на каждую кнопку обработчик события click
+        btn.addEventListener('click', () => {
+         // Получаем предыдущую активную кнопку
+         const prevActiveItem = document.querySelector('.service__info_box_active');
+          // Получаем предыдущую активную вкладку
+          const prevActiveButton = document.querySelector('.service__info_nav-link_active');
+          
+          // Проверяем есть или нет предыдущая активная кнопка
+          if (prevActiveButton) {
+            //Удаляем класс _active у предыдущей кнопки если она есть
+            prevActiveButton.classList.remove('service__info_nav-link_active');
+          }
+          
+          // Проверяем есть или нет предыдущая активная вкладка
+          if (prevActiveItem) {
+            // Удаляем класс _active у предыдущей вкладки если она есть
+            prevActiveItem.classList.remove('service__info_box_active');
+          }
+          // получаем id новой активной вкладки, который мы перем из атрибута data-tab у кнопки
+          const nextActiveItemId = `#${btn.getAttribute('data-tab')}`;
+          // получаем новую активную вкладку по id
+          const nextActiveItem = document.querySelector(nextActiveItemId);
+          
+          // добавляем класс _active кнопке на которую нажали
+          btn.classList.add('service__info_nav-link_active');
+          // добавляем класс _active новой выбранной вкладке
+          nextActiveItem.classList.add('service__info_box_active');
+        });
+      })
+}
+
+      if (window.innerWidth < 1024) {
+        document.addEventListener("DOMContentLoaded", () => {
+        const blogBoxes = document.querySelectorAll(".blog__box");
+        blogBoxes.forEach((box, index) => {
+          if (index >= 3) {
+            box.style.display = "none";
+          }
+        });
+      });
+    }
+
+    if (window.innerWidth < 767) { // Проверяем ширину экрана и существование экземпляра
+        swiper = new Swiper('.swiper', {
+            slidesPerView: 'auto',
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            spaceBetween: 24,
+        });
+    } else if (window.innerWidth >= 767 && swiper) {
+        swiper.destroy(); // Уничтожаем экземпляр, если экран больше 767px
+        swiper = null; // Обнуляем переменную
+    }
+
+
+
+
+  </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script src="/js/ajax.js"></script>
+    <script>
+    new WOW().init();
+    </script>
+</body>
+</html>

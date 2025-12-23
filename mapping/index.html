@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../index.css?v=1.3">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <title>Smart Light</title>
+    <style>
+    .container {
+      margin: auto;
+    }
+
+    .section {
+      margin-top: 80px;
+    }
+
+    .section .container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .hero-btn {
+      width: 30%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    ul {
+      padding: 0;
+      padding-left: 20px;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+     .tabs .title {
+      width: 100%;
+      grid-column: 1/3;
+     }
+
+    .tabs .container {
+      display: grid;
+      grid-template-columns: auto auto;
+      row-gap: 50px;
+    }
+
+    .tabs-box {
+      width: 80%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      margin: auto;
+    }
+
+    .path {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .path-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      width: 50%;
+      text-align: center;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      margin: 70px 0;
+    }
+
+    .grid-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      text-align: center;
+    }
+
+    form {
+      margin: auto;
+    }
+
+    .faq .subtitle {
+      margin-top: 40px;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <!-- <canvas id="canvas"></canvas> -->
+    <div class="container">
+      <a href="../" class="header__logo">
+        <img src="../img/logo.svg" alt="logo" />
+      </a>
+      <span class="mobile desc burger">меню</span>
+      <nav class="header__nav">
+        <a href="../" class="header__nav-link desc">о нас</a>
+        <a href="../projects/" class="header__nav-link desc">проекты</a>
+        <a class="header__nav-link desc">команда</a>
+        <a href="../blog/" class="header__nav-link desc">блог</a>
+        <button class="header__btn pc pt">обсудить проект</button>
+        <div class="header__contacts mobile">
+          <p class="desc">контакты</p>
+          <div class="header__contacts-text">
+            <a href="tel:" class="desc">+7 777 777 77 77</a>
+            <a href="mailto:" class="desc">smartlight@pro</a>
+          </div>
+          <div class="header__contacts-row">
+            <p class="desc">Создайте незабываемое шоу вместе с нами</p>
+            <button class="header__btn">обсудить проект</button>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main class="laser-main map-main">
+    <section class="hero laser-hero-main">
+      <div class="container">
+        <div class="hero-text wow animate__animated animate__slideInUp">
+          <h1 class="hero-title">3D MAPPING</h1>
+          <h2 class="hero-title">который превращает пространство в событие</h2>
+          <button class="hero-btn">заказать шоу</button>
+        </div>
+        <div class="hero-text-add wow hero-text animate__animated animate__fadeIn">
+          <p class="subtitle">От архитектурных фасадов до фестивальных сцен: создаем мультимедийные перформансы, которые
+<br>повышают вовлеченность, 
+<br>укрепляют бренд 
+<br>и выделяют событие среди других</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="laser-why">
+      <div class="container">
+        <div class="laser-why-container">
+          <h2 class="title wow animate__animated animate__slideInLeft">3D-мэппинг: технология точной проекции</h2>
+          <p class="laser-desc wow animate__animated animate__slideInLeft">3D-мэппинг — это технология, которая позволяет наложить визуальный контент на любой объект так, чтобы изображение выглядело естественно и точно повторяло его форму. Мы создаем цифровую модель поверхности, рассчитываем, как на нее ляжет свет, и оживляем анимацией. </p>
+          <div class="laser-why-img laser-desc wow animate__animated animate__slideInRight">
+            <img src="../img/laser/hero-map.png" alt="why" />
+          </div>
+        </div>
+        <div class="laser-why-box">
+          <h3 class="title wow animate__animated animate__slideInRight">В результате привычные вещи — от предметов и стен <br>до сценических конструкций — превращаются в динамичную часть шоу. Мэппинг помогает расширить пространство, усилить атмосферу события и сделать визуальную историю более убедительной.</h3>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-video wow animate__animated animate__fadeIn">
+      <div class="container">
+        <div class="stripe pc pt"></div>
+        <div class="stripe pc pt"></div>
+        <div class="stripe pc pt"></div>
+        <div class="stripe pc pt"></div>
+        <div class="stripe pc pt"></div>
+          <div class="iframe-wrapper">
+              <iframe 
+                  id="vimeo-player" 
+                  src="https://player.vimeo.com/video/1019806168?api=1&player_id=v&controls=0" 
+                  frameborder="0" 
+                  allow="autoplay; fullscreen" 
+                  allowfullscreen>
+              </iframe>
+          </div>
+          <div class="video-info">
+              <p class="desc video-title">smartlight: как мы подходим к процессу работы</p>
+              <div id="current-time" class="desc">00:00</div>
+              <p id="b" class="desc">смотреть</p>
+          </div>
+      </div>
+  </section>
+
+  <section class="formats">
+    <div class="container">
+        <h2 class="desc wow animate__animated animate__slideInLeft">для кого</h2>
+        <div class="formats-container">
+          <p class="title wow animate__animated animate__fadeIn">Мы учим стены говорить, а пространство — дышать</p>
+          <div class="formats-row">
+            <div class="formats-box wow animate__animated animate__fadeIn">
+              <div class="formats-img">
+                <img src="../img/laser/format1-map.png" alt="format" />
+              </div>
+              <p class="laser-desc">Рекламные кампании, презентации продуктов и девелоперских проектов</p>
+            </div>
+            <div class="formats-box wow animate__animated animate__fadeIn">
+              <div class="formats-img">
+                <img src="../img/laser/format2-map.png" alt="format" />
+              </div>
+              <p class="laser-desc">Городские праздники, музыкальные и культурные мероприятия</p>
+            </div>
+            <div class="formats-box wow animate__animated animate__fadeIn">
+              <div class="formats-img">
+                <img src="../img/laser/format3-map.png" alt="format" />
+              </div>
+              <p class="laser-desc">Выставки, музейные, образовательные инициативы</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="laser-projects">
+      <div class="container">
+        <div class="laser-projects-top">
+          <h2 class="desc wow animate__animated animate__slideInLeft">форматы шоу</h2>
+          <p class="title wow animate__animated animate__fadeIn">Видеопроекции превращают обычные локации в живые организмы. Наши технологи стирают грань между физическим<br> 
+и цифровым — всё работает на вашу историю</p>
+        </div>
+        <div class="map-format">
+          <div class="map-format-box wow animate__animated animate__fadeIn">
+            <div class="map-format-promo">
+              <div class="map-format-img">
+                <img src="../img/laser/promo1.png" alt="promo" />
+              </div>
+              <span class="desc">«Маяк, МРИЯ» → смотреть проект</span>
+            </div>
+
+            <div class="map-format-text">
+              <p class="laser-desc bold">Архитектурный 3D-мэппинг</p>
+              <p class="laser-desc">Проекция на зданиях, мостах, памятниках и любых крупных архитектурных объектах. Позволяет разворачивать на поверхности целые визуальные истории: «рушить» стены, превращать фасад в живую картину. Мост может расходиться под ногами зрителей, превращаясь в стеклянную арку над водой, или памятник — «оживать» и становиться частью сюжета.</p>
+            </div>
+            <p class="desc">Используется на фестивалях, открытых городских праздниках, днях города и больших презентациях.</p>
+          </div>
+
+          <div class="map-format-box wow animate__animated animate__fadeIn">
+            <div class="map-format-promo">
+              <div class="map-format-img">
+                <img src="../img/laser/promo2.png" alt="promo" />
+              </div>
+              <span class="desc">«Маяк, МРИЯ» → смотреть проект</span>
+            </div>
+
+            <div class="map-format-text">
+              <p class="laser-desc bold">Интерьерный 3D-мэппинг</p>
+              <p class="laser-desc">Проекция внутри помещений: на стены, потолки, сценические конструкции, декор и даже предметы. Помогает полностью менять настроение пространства: от плавных медиа-сцен до динамичных шоу. Стол может превращаться в «поверхность из воды», по которой расходятся волны, когда гость кладет руку; или обычный потолок — в объемный купол планетария.</p>
+            </div>
+            <p class="desc">Идеально для деловых событий, иммерсивных ужинов, корпоративных шоу и камерных мероприятий.</p>
+          </div>
+
+          <div class="map-format-box wow animate__animated animate__fadeIn">
+            <div class="map-format-promo">
+              <div class="map-format-img">
+                <img src="../img/laser/promo3.png" alt="promo" />
+              </div>
+              <span class="desc">«Оживший парк» → смотреть проект</span>
+            </div>
+
+            <div class="map-format-text">
+              <p class="laser-desc bold">Ландшафтный 3D-мэппинг</p>
+              <p class="laser-desc">Проекция на природные объекты: деревья, скалы, холмы, склоны, водоемы. Позволяет работать с естественным рельефом, создавая эффект живой природы, которая реагирует на свет. Например, лес превращается в светящуюся «реку ветра», где каждое дерево становится движущейся частью анимации.</p>
+            </div>
+            <p class="desc">Используется на фестивалях, в парках, на природных площадках, в девелоперских проектах — чтобы показывать концепции будущих ландшафтов.</p>
+          </div>
+
+          <div class="map-format-box wow animate__animated animate__fadeIn">
+            <div class="map-format-promo">
+              <div class="map-format-img">
+                <img src="../img/laser/promo4.png" alt="promo" />
+              </div>
+              <span class="desc">«Оживший парк» → смотреть проект</span>
+            </div>
+
+            <div class="map-format-text">
+              <p class="laser-desc bold">Интерактивный 3D-мэппинг</p>
+              <p class="laser-desc">Технология, где зритель становится частью шоу. Контент реагирует на движение, жесты или расположение человека. Поверхность превращается в озеро, а рыбы уплывают от шагов; человек поднимает руку, вокруг него вспыхивают виртуальные частицы; на платье невесты распускаются цифровые цветы или летят световые птицы.</p>
+            </div>
+            <p class="desc">Подходит для выставок, fashion-event'ов, шоу, частных событий и интерактивных арт-пространств.</p>
+          </div>
+        </div>
+        <div class="laser-project-info wow animate__animated animate__fadeIn">
+          <p class="title">Эмоции — только начало. 3D mapping повышает вовлеченность, усиливает коммуникацию, создает повод для медиа. Вы получаете эффект, который продолжается далеко за пределами мероприятия.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-video project-video-map wow animate__animated animate__fadeIn">
+      <div class="container">
+        <div class="stripe pc pt"></div>
+        <div class="stripe pc pt"></div>
+        <div class="stripe pc pt"></div>
+        <div class="stripe pc pt"></div>
+        <div class="stripe pc pt"></div>
+          <div class="iframe-wrapper">
+              <iframe 
+                  id="vimeo-player" 
+                  src="https://player.vimeo.com/video/1019806168?api=1&player_id=v&controls=0" 
+                  frameborder="0" 
+                  allow="autoplay; fullscreen" 
+                  allowfullscreen>
+              </iframe>
+          </div>
+          <div class="video-info">
+              <p class="desc video-title">smartlight: как мы подходим к процессу работы</p>
+              <div id="current-time" class="desc">00:00</div>
+              <p id="b" class="desc">смотреть</p>
+          </div>
+      </div>
+  </section>
+
+    <section class="laser-work">
+      <div class="container">
+        <h2 class="title wow animate__animated animate__slideInLeft">Когда визуальный эффект превращается в пользу для бизнеса, <br>города и аудитории</h2>
+        <div class="laser-work-container">
+          <div class="laser-work-box map-work-box wow animate__animated animate__slideInRight">
+            <p class="subtitle">Бренды, девелоперы, ТРЦ, отели и рестораны</p>
+            <p class="laser-desc">3D-мэппинг помогает выделить продукт и пространство среди конкурентов, показать инновационность бренда и сформировать премиальное впечатление. Вы наглядно демонстрируете сложные архитектурные решения, вовлекаете аудиторию и создаете визуальный образ, который хочется снимать и пересматривать.</p>
+          </div>
+          <div class="laser-work-box map-work-box wow animate__animated animate__slideInRight">
+            <p class="subtitle">Музыкальные фестивали, концерты, спортивные события</p>
+            <p class="laser-desc">Мэппинг усиливает эмоции от музыки, создает целостную атмосферу и превращает сцену в живое пространство. Визуалы синхронизируются с ритмом, подчеркивают драматургию и делают выступление иммерсивным. Ваше шоу получает глубину, масштаб и эффект, который невозможно передать декорациями.</p>
+          </div>
+          <div class="laser-work-box map-work-box wow animate__animated animate__slideInRight">
+            <p class="subtitle">Городские и общественные праздники</p>
+            <p class="laser-desc">Проекции привлекают горожан и туристов, превращая площадь или фасад в центр притяжения. Мэппинг помогает сформировать позитивный имидж территории, создает яркий контент для СМИ и соцсетей и подчеркивает статус события. Это решение, которое делает праздник по-настоящему уникальным.</p>
+          </div>
+          <div class="laser-work-box map-work-box wow animate__animated animate__slideInRight">
+            <p class="subtitle">Культурные, образовательные и музейные проекты</p>
+            <p class="laser-desc">3D-мэппинг помогает оживить исторические сюжеты, объяснить сложные научные процессы, вовлечь посетителей и сделать искусство ближе. Проекции создают эмоциональный контекст, повышают запоминаемость информации и помогают музеям и образовательным площадкам говорить с аудиторией языком современного меди-искусства.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+     <section class="laser-steps-title">
+      <div class="container">
+        <h2 class="title wow animate__animated animate__slideInLeft">Закулисье ярких шоу: 7 шагов к впечатляющему результату</h2>
+      </div>
+     </section>
+
+  <section class="principle laser-steps">
+      <div class="container">
+        <h2 class="desc wow animate__animated animate__slideInLeft">этапы</h2>
+        <div class="principle__nav  wow animate__animated animate__fadeIn">
+          <p class="subtitle principle__nav-point principle__nav-point_active" data-tab="tab_1">01. Задача</p>
+
+          <p class="laser-desc principle-text principle-text_active" id="tab_1">Погружение в задачу.<br>
+Встречаемся, уточняем детали и фиксируем ваши цели и пожелания. На этом этапе рождается направление, <br>в котором будет двигаться весь проект.
+          </p>
+
+          <p class="subtitle principle__nav-point" data-tab="tab_2">02. Изучение пространства</p>
+
+
+          <p class="laser-desc principle-text"  id="tab_2">Погружение в задачу.<br>
+Встречаемся, уточняем детали и фиксируем ваши цели и пожелания. На этом этапе рождается направление, <br>в котором будет двигаться весь проект.
+          </p>
+
+          <p class="subtitle principle__nav-point" data-tab="tab_3">03. Концепция и сценарий</p>
+
+          <p class="laser-desc principle-text"  id="tab_3">Погружение в задачу.<br>
+Встречаемся, уточняем детали и фиксируем ваши цели и пожелания. На этом этапе рождается направление, <br>в котором будет двигаться весь проект.
+          </p>
+
+           <p class="subtitle principle__nav-point" data-tab="tab_4">04. 3D-модель объекта</p>
+
+          <p class="laser-desc principle-text principle-text_active" id="tab_4">Погружение в задачу.<br>
+Встречаемся, уточняем детали и фиксируем ваши цели и пожелания. На этом этапе рождается направление, <br>в котором будет двигаться весь проект.
+          </p>
+
+          <p class="subtitle principle__nav-point" data-tab="tab_5">05. Визуальный стиль и анимация</p>
+
+
+          <p class="laser-desc principle-text"  id="tab_5">Погружение в задачу.<br>
+Встречаемся, уточняем детали и фиксируем ваши цели и пожелания. На этом этапе рождается направление, <br>в котором будет двигаться весь проект.
+          </p>
+
+          <p class="subtitle principle__nav-point" data-tab="tab_6">06. Саунд-дизайн</p>
+
+          <p class="laser-desc principle-text"  id="tab_6">Погружение в задачу.<br>
+Встречаемся, уточняем детали и фиксируем ваши цели и пожелания. На этом этапе рождается направление, <br>в котором будет двигаться весь проект.
+          </p>
+
+            <p class="subtitle principle__nav-point" data-tab="tab_7">07. Премьера</p>
+
+          <p class="laser-desc principle-text"  id="tab_7">Погружение в задачу.<br>
+Встречаемся, уточняем детали и фиксируем ваши цели и пожелания. На этом этапе рождается направление, <br>в котором будет двигаться весь проект.
+          </p>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="laser-show">
+      <div class="container">
+        <div class="laser-show-container">
+          <div class="laser-show-box wow animate__animated animate__slideInRight">
+            <div class="laser-show-img">
+              <img src="../img/laser/show1.png" alt="show" />
+            </div>
+            <p class="subtitle">Там, где архитектура оживает</p>
+          </div>
+          <div class="laser-show-box wow animate__animated animate__slideInRight">
+            <div class="laser-show-img">
+              <img src="../img/laser/show2.png" alt="show" />
+            </div>
+            <p class="laser-desc">Мультимедийные инсталляции превращают обычные места в точки притяжения. Наши мэппинг-шоу показывают, как здание может дышать, ландшафт — двигаться, а интерьер — рассказывать историю. Мы подстраиваем контент под геометрию, текстуры и масштаб объекта, создавая эффект полного погружения. Смотрите проекты, в которых пространство становится частью сюжета.</p>
+          </div>
+          <button class="hero-btn laser-btn wow animate__animated animate__slideInUp">смотреть все проекты</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="laser-advantages">
+      <div class="container">
+        <p class="desc wow animate__animated animate__slideInLeft">преимущества</p>
+        <div class="laser-advantages-container">
+          <p class="title wow animate__animated animate__slideInRight">Ваш проект в руках команды, которая создает впечатления</p>
+          <div class="laser-advantages-box wow animate__animated animate__slideInRight">
+            <p class="desc">Полный цикл под ключ</p>
+            <p class="desc">Мы ведем проект от идеи до финального показа: сценарий, 3D-моделирование, анимация, монтаж, тесты. Один подрядчик — никакого хаоса, полный контроль и гарантированный результат.</p>
+          </div>
+           <div class="laser-advantages-box wow animate__animated animate__slideInRight">
+            <p class="desc">Сотни реализованных шоу</p>
+            <p class="desc">От камерных залов до городских площадей, мостов и фасадов. Мы умеем управлять крупными объектами и создавать запоминающийся wow-эффект.</p>
+          </div>
+           <div class="laser-advantages-box wow animate__animated animate__slideInRight">
+            <p class="desc">Авторская постановка для любого масштаба</p>
+            <p class="desc">Каждый проект — уникальная история: иммерсивные пространства, фестивали, концерты, выставки. Даже маленький объект мы превращаем в впечатляющую сцену.</p>
+          </div>
+           <div class="laser-advantages-box wow animate__animated animate__slideInRight">
+            <p class="desc">Режиссура и драматургия</p>
+            <p class="desc">3D-мэппинг — это не просто картинки. Мы создаем историю с кульминациями, ритмом и эмоциями, где каждый кадр усилен светом и движением, чтобы захватывать внимание зрителей.</p>
+          </div> 
+           <div class="laser-advantages-box wow animate__animated animate__slideInRight">
+            <p class="desc">Искусство в каждом пикселе</p>
+            <p class="desc">Команда художников, 3D-дизайнеров, motion-графиков и инженеров создает живой контент. Мы объединяем технологию и художественный взгляд, чтобы каждый проект выглядел как произведение искусства.</p>
+          </div>
+           <div class="laser-advantages-box wow animate__animated animate__slideInRight">
+            <p class="desc">Инженерия невозможного</p>
+            <p class="desc">Наш инженерный отдел разрабатывает уникальные мультимедиа-решения и проводит эксперименты. Мы ищем лучшие подходы для вашего объекта и формата, а не стандартные шаблоны.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+     <section class="laser-hero">
+      <div class="container">
+        <div class="hero-text wow animate__animated animate__slideInUp">
+          <h1 class="title">Мы делаем то, что другие считают нереальным.<br>Smartlight — пионеры невозможного.</h1>
+          <button class="hero-btn">заказать бесплатную консультацию</button>
+        </div>
+      </div>
+    </section>
+    <section class="laser-feedback">
+      <div class="container">
+        <p class="desc wow animate__animated animate__slideInLeft">отзывы</p>
+        <div class="laser-feedback-container">
+          <p class="title wow animate__animated animate__slideInRight">Эмоции и впечатления — наша лучшая награда.<br>
+Мы создаем проекты, которые удивляют и остаются в памяти. Но настоящую оценку дают те, кто видел шоу своими глазами. Отзывы наших клиентов, которым важно качество, креатив и точность исполнения.</p>
+          <div class="laser-feedback-box map-feedback-box wow animate__animated animate__slideInRight">
+            <p class="laser-desc">Работа с командой Smartlight по реализации 3D мэппинга превзошла все наши ожидания. Техническое исполнение было безупречным, сценарий ярким и запоминающимся. Наши гости были в полном восторге, <br>а мероприятие получило много положительных отзывов.</p>
+            <div class="laser-feedback-row">
+              <div class="laser-feedback-info">
+                <p class="desc laser-feedback-desc">Год</p>
+                <p class="desc">2021</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="laser-feedback-box map-feedback-box wow animate__animated animate__slideInRight">
+            <p class="laser-desc">Искали интересное решение для яркого оформления нашего мероприятия.  остановились на 3D мэппинге- это стало тем самым идеальным выбором. Все было организовано профессионально, <br>и результат вызвал восторг у нашей аудитории.</p>
+            <div class="laser-feedback-row">
+              <div class="laser-feedback-info">
+                <p class="desc laser-feedback-desc">Год</p>
+                <p class="desc">2021</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="laser-feedback-box map-feedback-box wow animate__animated animate__slideInRight">
+            <p class="laser-desc">Решились заказать 3D мэппинг для нашего небольшого фестиваля — <br>и нисколько не пожалели. Команда Smartlight реально знает свое дело. Во время шоу у нас было столько восторженных комментариев, и многие подходили, спрашивали, как это всё сделано. Это действительно впечатляет — современные технологии, креатив, а самое главное — атмосфера веселья и удивления. Бонус — ребята оказались очень приятнымии — сразу создали позитивную атмосферу на площадке. <br>В общем, суперский опыт!</p>
+            <div class="laser-feedback-row">
+              <div class="laser-feedback-info">
+                <p class="desc laser-feedback-desc">Год</p>
+                <p class="desc">2021</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="hero-form laser-form">
+      <div class="container">
+        <div class="hero-form__text">
+          <h2 class=" title wow animate__animated animate__slideInLeft">Сделаем невозможное вашим реальным событием.<br>
+Расскажите о своей идее, <br>а мы превратим ее в эффектное <br>3D-шоу, которое будут обсуждать</h2>
+        </div>
+        <form action="" method="POST" id="ajax_form" class="form wow animate__animated animate__slideInUp">
+          <div class="form-row">
+            <input type="hidden" name="userForm" value="Smartlight - главная форма на странице">
+            <input type="text" class="form__input desc"  name="userName" placeholder="ИМЯ*" />
+            <input type="text" class="form__input desc" name="userSurname" placeholder="ФАМИЛИЯ*" />
+          </div>
+          <div class="form-row">
+            <input type="text" class="form__input desc" name="userMail" placeholder="E-MAIL*" />
+            <input type="text" class="form__input desc"  name="userPhone" placeholder="ТЕЛЕФОН*" />
+          </div>
+
+          <input type="text" class="form__input desc" name="userCompany" placeholder="КОМПАНИЯ*" />
+          <textarea class="form__textarea desc" name="userContext" placeholder="РАССКАЖИТЕ О ЗАДАЧЕ*"></textarea>
+          <div class="checkbox-policy">
+            <input class="checkbox__input" type="checkbox" id="1" />
+            <label class="checkbox__label desc" for="1">Да, я согласен получать полезный контент <br class="mobile">и новости <br class="pt">от Smartlight</label>
+          </div>
+          <div class="checkbox-policy">
+            <input class="checkbox__input" checked type="checkbox" id="2" />
+            <label class="checkbox__label desc" for="2">я даю Smartlight согласие на обработку моих персональных данных в соответствии <br class="pc mobile">с <a>политикой конфиденциальности*</a></label>
+          </div>
+          <div class="send-form">
+            <button type="button" id="btn1" class="form-btn desc">ОТПРАВИТЬ →</button>
+            <p class="desc"></p>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section class="laser-faq">
+      <div class="container">
+        <p class="title wow animate__animated animate__slideInLeft">Часто задаваемые вопросы о 3D‑мэппинге</p>
+        <div class="laser-faq-container">
+          <div class="laser-faq-box wow animate__animated animate__slideInRight">
+            <p class="subtitle">Слишком дорого. Чем это лучше обычных экранов/баннеров?</p>
+            <p class="laser-desc laser-faq-fold">Здесь будет ответ. Полный пример ответа в последнем вопросе</p>
+            <span class="laser-faq-btn">+</span>
+          </div>
+          <div class="laser-faq-box wow animate__animated animate__slideInRight">
+            <p class="subtitle">А вдруг не сработает на нашем объекте?</p>
+            <p class="laser-desc laser-faq-fold">Здесь будет ответ. Полный пример ответа в последнем вопросе</p>
+            <span class="laser-faq-btn">+</span>
+          </div>
+          <div class="laser-faq-box wow animate__animated animate__slideInRight">
+            <p class="subtitle">Сколько времени займет подготовка? Мы ограничены по срокам</p>
+            <p class="laser-desc laser-faq-fold">Здесь будет ответ. Полный пример ответа в последнем вопросе</p>
+            <span class="laser-faq-btn">+</span>
+          </div>
+          <div class="laser-faq-box wow animate__animated animate__slideInRight">
+            <p class="subtitle">А если будут технические сбои во время шоу?</p>
+            <p class="laser-desc laser-faq-fold">Здесь будет ответ. Полный пример ответа в последнем вопросе</p>
+            <span class="laser-faq-btn">+</span>
+          </div>
+          <div class="laser-faq-box wow animate__animated animate__slideInRight">
+            <p class="subtitle">Какое оборудование вы используете? Можно ли посмотреть?</p>
+            <p class="laser-desc laser-faq-fold">Здесь будет ответ. Полный пример ответа в последнем вопросе</p>
+            <span class="laser-faq-btn">+</span>
+          </div>
+          <div class="laser-faq-box wow animate__animated animate__slideInRight">
+            <p class="subtitle">Можно ли интегрировать наш логотип/видео в шоу?</p>
+            <p class="laser-desc laser-faq-fold">Здесь будет ответ. Полный пример ответа в последнем вопросе</p>
+            <span class="laser-faq-btn">+</span>
+          </div>
+            <div class="laser-faq-box wow animate__animated animate__slideInRight">
+            <p class="subtitle">А если мы захотим что-то изменить в середине работы?</p>
+            <p class="laser-desc laser-faq-fold">Здесь будет ответ. Полный пример ответа в последнем вопросе</p>
+            <span class="laser-faq-btn">+</span>
+          </div>
+            <div class="laser-faq-box wow animate__animated animate__slideInRight">
+            <p class="subtitle">Какие есть варианты под наш бюджет?</p>
+            <p class="laser-desc laser-faq-fold">Здесь будет ответ. Полный пример ответа в последнем вопросе</p>
+            <span class="laser-faq-btn">+</span>
+          </div>
+            <div class="laser-faq-box wow animate__animated animate__slideInRight">
+            <p class="subtitle">Нужно ли специальное разрешение для уличного шоу?</p>
+            <p class="laser-desc laser-faq-fold">Здесь будет ответ. Полный пример ответа в последнем вопросе</p>
+            <span class="laser-faq-btn">+</span>
+          </div>
+            <div class="laser-faq-box wow animate__animated animate__slideInRight">
+            <p class="subtitle">Что, если погода испортится?</p>
+            <p class="laser-desc laser-faq-fold">Здесь будет ответ. Полный пример ответа в последнем вопросе</p>
+            <span class="laser-faq-btn">+</span>
+          </div>
+          <div class="laser-faq-box wow animate__animated animate__slideInRight">
+            <p class="subtitle">Сколько человек нужно для обслуживания шоу?</p>
+            <p class="laser-desc laser-faq-fold">В среднем 3–5 человек: инженеры, операторы оборудования и технический директор. Для глобальных мы формируем большую команду с распределением зон ответственности по контролю техники и сцены.</p>
+            <span class="laser-faq-btn">+</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <footer class="footer">
+    <div class="container">
+      <div class="stripe pc"></div>
+      <div class="stripe pc"></div>
+      <div class="stripe pc"></div>
+      <div class="stripe pc"></div>
+      <div class="stripe pc"></div>
+      <div class="footer__container">
+        <div class="footer__logo">
+          <img src="../img/logo.svg" alt="logo" />
+        </div>
+        <nav></nav>
+        <nav class="footer__nav">
+          <a class="footer__nav-link desc">о нас</a>
+          <a class="footer__nav-link desc">проекты</a>
+        </nav>
+        <nav class="footer__nav">
+          <a class="footer__nav-link desc">вакансии</a>
+          <a class="footer__nav-link desc">блог</a>
+          <a class="footer__nav-link desc">контакты</a>
+        </nav>
+        <nav class="footer__nav">
+          <a class="footer__nav-link desc">youtube</a>
+          <a class="footer__nav-link desc">vk</a>
+          <a class="footer__nav-link desc">linkedin</a>
+        </nav>
+        <nav class="footer__nav">
+          <a class="footer__nav-link desc">политика конфиденциальности</a>
+          <a class="footer__nav-link desc">пользовательское соглашение</a>
+          <a class="footer__nav-link desc">согласие на обработку данных</a>
+        </nav>
+      </div>
+      <div class="footer__bottom">
+        <h2 class="desc">© 2024 smartlight</h2>
+      </div>
+  </div>
+  </footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script src="../js/shader.js"></script>
+<script src="../js/script.js"></script>
+<script src="../js/script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+<script src="../js/ajax.js"></script>
+<script>
+  new WOW().init();
+</script>
+<script>
+  const tabsButtons = document.querySelectorAll('.principle__nav-point')
+
+    
+
+      if (window.innerWidth < 1024) {
+      tabsButtons.forEach(btn => {
+      // вешаем на каждую кнопку обработчик события клик
+        btn.addEventListener('click', () => {
+          // Получаем предыдущую активную кнопку
+          const prevActiveItem = document.querySelector('.principle-text_active');
+          // Получаем предыдущую активную вкладку
+          const prevActiveButton = document.querySelector('.principle__nav-point_active');
+          
+          // Проверяем есть или нет предыдущая активная кнопка
+          if (prevActiveButton) {
+            //Удаляем класс _active у предыдущей кнопки если она есть
+            prevActiveButton.classList.remove('principle__nav-point_active');
+          }
+          
+          // Проверяем есть или нет предыдущая активная вкладка
+          if (prevActiveItem) {
+            // Удаляем класс _active у предыдущей вкладки если она есть
+            prevActiveItem.classList.remove('principle-text_active');
+          }
+          // получаем id новой активной вкладки, который мы перем из атрибута data-tab у кнопки
+          const nextActiveItemId = `#${btn.getAttribute('data-tab')}`;
+          // получаем новую активную вкладку по id
+          const nextActiveItem = document.querySelector(nextActiveItemId);
+          
+          // добавляем класс _active кнопке на которую нажали
+          btn.classList.add('principle__nav-point_active');
+          // добавляем класс _active новой выбранной вкладке
+          nextActiveItem.classList.add('principle-text_active');
+        });
+      })
+    } else {
+      tabsButtons.forEach(btn => {
+      // вешаем на каждую кнопку обработчик события клик
+        btn.addEventListener('mousemove', () => {
+          // Получаем предыдущую активную кнопку
+          const prevActiveItem = document.querySelector('.principle-text_active');
+          // Получаем предыдущую активную вкладку
+          const prevActiveButton = document.querySelector('.principle__nav-point_active');
+          
+          // Проверяем есть или нет предыдущая активная кнопка
+          if (prevActiveButton) {
+            //Удаляем класс _active у предыдущей кнопки если она есть
+            prevActiveButton.classList.remove('principle__nav-point_active');
+          }
+          
+          // Проверяем есть или нет предыдущая активная вкладка
+          if (prevActiveItem) {
+            // Удаляем класс _active у предыдущей вкладки если она есть
+            prevActiveItem.classList.remove('principle-text_active');
+          }
+          // получаем id новой активной вкладки, который мы перем из атрибута data-tab у кнопки
+          const nextActiveItemId = `#${btn.getAttribute('data-tab')}`;
+          // получаем новую активную вкладку по id
+          const nextActiveItem = document.querySelector(nextActiveItemId);
+          
+          // добавляем класс _active кнопке на которую нажали
+          btn.classList.add('principle__nav-point_active');
+          // добавляем класс _active новой выбранной вкладке
+          nextActiveItem.classList.add('principle-text_active');
+        });
+      })
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+  const faqBoxes = document.querySelectorAll('.laser-faq-box');
+
+  faqBoxes.forEach(box => {
+    box.addEventListener('click', function () {
+
+      // Находим span внутри текущего блока
+      const btn = box.querySelector('.laser-faq-btn');
+
+      // Переключаем класс
+      box.classList.toggle('laser-faq-box_folded');
+
+      // Меняем текст в span в зависимости от состояния
+      if (box.classList.contains('laser-faq-box_folded')) {
+        btn.innerHTML = '-';
+      } else {
+        btn.innerHTML = '+';
+      }
+    });
+  });
+});
+
+</script>
+</body>
+</html>

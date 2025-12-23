@@ -1,0 +1,36 @@
+<html><body>
+  <video id="v" style="max-width:300px">
+      <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4" />
+  </video>
+
+<div id="current-time">00:00</div>
+  <p id="b" style='position:absolute; top: 60px; left: 130px; background: red; color: yellow; cursor:pointer'>смотреть</>
+  <script>
+const video = document.getElementById("v");
+const currentTimeDisplay = document.getElementById("current-time");
+
+// Функция для форматирования времени в "минуты:секунды"
+function formatTime(seconds) {
+    const minutes = Math.floor(seconds / 60);
+    const secs = Math.floor(seconds % 60);
+    return `${minutes < 10 ? '0' : ''}${minutes}:${secs < 10 ? '0' : ''}${secs}`;
+}
+
+// Добавляем обработчик события для обновления времени
+video.addEventListener("timeupdate", () => {
+    currentTimeDisplay.textContent = formatTime(video.currentTime);
+});
+
+      v = document.getElementById('v')
+      b = document.getElementById('b')
+      b.addEventListener('click',()=>{
+      if(b.innerText=='смотреть'){
+          b.innerText='пауза'
+          v.play()
+      }else{
+          b.innerText='смотреть'
+          v.pause()
+      }
+})
+  </script>
+</body></html>

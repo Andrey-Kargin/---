@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../index.css?v=1.3">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <title>Smart Light</title>
+</head>
+<body>
+  <header class="header">
+    <!-- <canvas id="canvas"></canvas> -->
+    <div class="container">
+      <a href="../" class="header__logo">
+        <img src="../img/logo.svg" alt="logo" />
+      </a>
+      <span class="mobile desc burger">меню</span>
+      <nav class="header__nav">
+        <a href="../" class="header__nav-link desc">о нас</a>
+        <a href="../projects/" class="header__nav-link desc">проекты</a>
+        <a href="../team/" class="header__nav-link desc">команда</a>
+        <a class="header__nav-link desc">блог</a>
+        <button class="header__btn pc pt">обсудить проект</button>
+        <div class="header__contacts mobile">
+          <p class="desc">контакты</p>
+          <div class="header__contacts-text">
+            <a href="tel:" class="desc">+7 777 777 77 77</a>
+            <a href="mailto:" class="desc">smartlight@pro</a>
+          </div>
+          <div class="header__contacts-row">
+            <p class="desc">Создайте незабываемое шоу вместе с нами</p>
+            <button class="header__btn">обсудить проект</button>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <div class="popup">
+      <div class="popup__container">
+        <h2 class="popup-form__text title">Обсудить проект</h2>
+        <form class="popup-form">
+          <div class="form-row">
+            <input type="text" class="form__input desc" placeholder="ИМЯ*" />
+            <input type="text" class="form__input desc" placeholder="ФАМИЛИЯ*" />
+          </div>
+          <div class="form-row">
+            <input type="text" class="form__input desc" placeholder="E-MAIL*" />
+            <input type="text" class="form__input desc" placeholder="ТЕЛЕФОН*" />
+          </div>
+
+          <input type="text" class="form__input desc" placeholder="КОМПАНИЯ*" />
+          <textarea class="form__textarea desc" placeholder="РАССКАЖИТЕ О ЗАДАЧЕ*"></textarea>
+          <div class="checkbox-policy">
+            <input class="checkbox__input" type="checkbox" id="1" />
+            <label class="checkbox__label desc" for="1">Да, я согласен получать полезный контент и новости <br class="pt">от Smartlight</label>
+          </div>
+          <div class="checkbox-policy">
+            <input class="checkbox__input" type="checkbox" id="2" />
+            <label class="checkbox__label desc" for="2">Я ДАЮ СОГЛАСИЕ НА ОБРАБОТКУ персональных данных</label>
+          </div>
+          <button type="button" class="form-btn desc">ОТПРАВИТЬ →</button>
+        </form>
+        <div class="desc close-popup">закрыть (Х)</div>
+        <div class="popup-footer">
+          <p class="desc">Вы также можете позвонить <br>или написать нам</p>
+          <div class="popup-column">
+            <a href="tel:" class="desc">+7 777 777 77 77</a>
+            <a href="mailto:smartlight@pro" class="desc">smartlight@pro</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <section class="blog-hero">
+      <div class="container">
+        <h1 class="title page-title">Блог</h1>
+        <p class="page-text">Оставайтесь в курсе новостей Smartlight — читайте о наших проектах, рекордах и инновациях в мире света <br class="pt">и мультимедиа</p>
+      </div>
+    </section>
+
+    <section class="blog-page">
+      <div class="container blog-container">
+        <a href="./article/" class="blog-box">
+          <div class="blog-img">
+            <img src="../img/blog-page/blog1.png" alt="image" />
+          </div>
+          <div class="blog-text">
+            <h2 class="desc">как мы установили мировой рекорд<br class="pc">свет, команда и процесс</h2>
+            <p class="desc">6 минут</p>
+          </div>
+        </a>
+
+        <a href="./article/" class="blog-box">
+          <div class="blog-img">
+            <img src="../img/blog-page/blog2.png" alt="image" />
+          </div>
+          <div class="blog-text">
+            <h2 class="desc">как мы установили мировой рекорд:<br class="pc">свет, команда и процесс</h2>
+            <p class="desc">6 минут</p>
+          </div>
+        </a>
+
+        <a href="./article/" class="blog-box">
+          <div class="blog-img">
+            <img src="../img/blog-page/blog3.png" alt="image" />
+          </div>
+          <div class="blog-text">
+            <h2 class="desc">как мы установили мировой рекорд:<br class="pc">свет, команда и процесс</h2>
+            <p class="desc">6 минут</p>
+          </div>
+        </a>
+
+        <a href="./article/" class="blog-box">
+          <div class="blog-img">
+            <img src="../img/blog-page/blog4.png" alt="image" />
+          </div>
+          <div class="blog-text">
+            <h2 class="desc">как мы установили мировой рекорд:<br class="pc">свет, команда и процесс</h2>
+            <p class="desc">6 минут</p>
+          </div>
+        </a>
+
+        <a href="./article/" class="blog-box">
+          <div class="blog-img">
+            <img src="../img/blog-page/blog5.png" alt="image" />
+          </div>
+          <div class="blog-text">
+            <h2 class="desc">как мы установили мировой рекорд:<br class="pc">свет, команда и процесс</h2>
+            <p class="desc">6 минут</p>
+          </div>
+        </a>
+
+        <a href="./article/" class="blog-box">
+          <div class="blog-img">
+            <img src="../img/blog-page/blog6.png" alt="image" />
+          </div>
+          <div class="blog-text">
+            <h2 class="desc">как мы установили мировой рекорд:<br class="pc">свет, команда и процесс</h2>
+            <p class="desc">6 минут</p>
+          </div>
+        </a>
+
+        <a href="./article/" class="blog-box blog-main">
+          <div class="blog-img">
+            <img src="../img/blog-page/blog7.png" alt="image" />
+          </div>
+          <div class="blog-text">
+            <h2 class="desc">как мы установили мировой рекорд:<br>свет, команда и процесс</h2>
+            <p class="desc">6 минут</p>
+            <p class="desc">читать</p>
+          </div>
+        </a>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__container">
+        <div class="footer__logo">
+          <img src="../img/logo.svg" alt="logo" />
+        </div>
+        <nav></nav>
+        <nav class="footer__nav">
+          <a class="footer__nav-link desc">о нас</a>
+          <a class="footer__nav-link desc">проекты</a>
+        </nav>
+        <nav class="footer__nav">
+          <a class="footer__nav-link desc">вакансии</a>
+          <a class="footer__nav-link desc">блог</a>
+          <a class="footer__nav-link desc">контакты</a>
+        </nav>
+        <nav class="footer__nav">
+          <a class="footer__nav-link desc">youtube</a>
+          <a class="footer__nav-link desc">vk</a>
+          <a class="footer__nav-link desc">linkedin</a>
+        </nav>
+        <nav class="footer__nav">
+          <a class="footer__nav-link desc">политика конфиденциальности</a>
+          <a class="footer__nav-link desc">пользовательское соглашение</a>
+          <a class="footer__nav-link desc">согласие на обработку данных</a>
+        </nav>
+      </div>
+      <div class="footer__bottom">
+        <h2 class="desc">© 2024 smartlight</h2>
+      </div>
+  </div>
+  </footer>
+  <script>
+        // Получаем контейнер, в котором находятся элементы blog-box
+    const container = document.querySelector('.blog-container');
+
+    // Получаем все элементы blog-box
+    const blogBoxes = Array.from(container.querySelectorAll('.blog-box'));
+
+    // Очищаем контейнер
+    container.innerHTML = '';
+
+    // Разворачиваем массив blog-box и добавляем их обратно в контейнер
+    blogBoxes.reverse().forEach(blogBox => {
+        container.appendChild(blogBox);
+    });
+  </script>
+  <script src="../js/script.js"></script>
+</body>
+</html>

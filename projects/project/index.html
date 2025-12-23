@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+  <link rel="stylesheet" href="../../index.css?v=1.3">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <title>Smart Light</title>
+</head>
+<body>
+  <div class="stripe"></div>
+  <div class="stripe"></div>
+  <div class="stripe"></div>
+  <div class="stripe"></div>
+  <div class="stripe"></div>
+  <header class="header">
+    <!-- <canvas id="canvas"></canvas> -->
+    <div class="container">
+      <a href="../../" class="header__logo">
+        <img src="../../img/logo.svg" alt="logo" />
+      </a>
+      <span class="mobile desc burger">меню</span>
+      <nav class="header__nav">
+        <a href="../../" class="header__nav-link desc">о нас</a>
+        <a href="../" class="header__nav-link desc">проекты</a>
+        <a href="../../team/" class="header__nav-link desc">команда</a>
+        <a href="../../blog/" class="header__nav-link desc">блог</a>
+        <button class="header__btn pc pt">обсудить проект</button>
+        <div class="header__contacts mobile">
+          <p class="desc">контакты</p>
+          <div class="header__contacts-text">
+            <a href="tel:" class="desc">+7 777 777 77 77</a>
+            <a href="mailto:" class="desc">smartlight@pro</a>
+          </div>
+          <div class="header__contacts-row">
+            <p class="desc">Создайте незабываемое шоу вместе с нами</p>
+            <button class="header__btn">обсудить проект</button>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="project">
+    <div class="popup">
+      <div class="popup__container">
+        <h2 class="popup-form__text title">Обсудить проект</h2>
+        <form class="popup-form">
+          <div class="form-row">
+            <input type="text" class="form__input desc" placeholder="ИМЯ*" />
+            <input type="text" class="form__input desc" placeholder="ФАМИЛИЯ*" />
+          </div>
+          <div class="form-row">
+            <input type="text" class="form__input desc" placeholder="E-MAIL*" />
+            <input type="text" class="form__input desc" placeholder="ТЕЛЕФОН*" />
+          </div>
+
+          <input type="text" class="form__input desc" placeholder="КОМПАНИЯ*" />
+          <textarea class="form__textarea desc" placeholder="РАССКАЖИТЕ О ЗАДАЧЕ*"></textarea>
+          <div class="checkbox-policy">
+            <input class="checkbox__input" type="checkbox" id="1" />
+            <label class="checkbox__label desc" for="1">Да, я согласен получать полезный контент и новости <br class="pt">от Smartlight</label>
+          </div>
+          <div class="checkbox-policy">
+            <input class="checkbox__input" type="checkbox" id="2" />
+            <label class="checkbox__label desc" for="2">Я ДАЮ СОГЛАСИЕ НА ОБРАБОТКУ персональных данных</label>
+          </div>
+          <button type="button" class="form-btn desc">ОТПРАВИТЬ →</button>
+        </form>
+        <div class="desc close-popup">закрыть (Х)</div>
+        <div class="popup-footer">
+          <p class="desc">Вы также можете позвонить <br>или написать нам</p>
+          <div class="popup-column">
+            <a href="tel:" class="desc">+7 777 777 77 77</a>
+            <a href="mailto:smartlight@pro" class="desc">smartlight@pro</a>
+          </div>
+        </div>
+      </div>
+    </div>
+      <div class="container">
+        <h1 class="title page-title">Проекты</h1>
+      </div>
+
+      <section class="project-hero">
+        <div class="container">
+          <div class="project-hero-name">
+            <h2 class="page-text">Cад Света: Легенда о друидах</h2>
+            <h3 class="page-text">Световая прогулка</h3>
+          </div>
+          <div class="project-info">
+            <p class="page-text">На интерактивных локациях гостям парка предлагается развеять семена по  лугу, посмотреть как зарождаются ростки, спеть цветам песни, чтобы дать им раскрыться, и поучаствовать в древнем обряде у магического костра. Важная цель проекта — экопросвящение.</p>
+            <div class="project-info-column">
+              <p class="desc">Год</p>
+              <p class="desc">2021</p>
+            </div>
+            <div class="project-info-column">
+              <p class="desc">Услуги</p>
+              <div class="project-type">
+                <a class="project-type-name desc">световая инсталляция</a>
+                <a class="project-type-name desc">Шоу дронов</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="project-video">
+        <div class="container">
+          <video id="v">
+            <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4" />
+          </video>
+          <div class="video-info">
+            <p class="desc video-title">smartlight: как мы подходим к процессу работы</p>
+            <div id="current-time" class="desc">00:00</div>
+            <p id="b" class="desc">смотреть</p>
+          </div>
+        </div>
+      </section>
+
+      <secton class="project-text">
+        <div class="container">
+          <div class="project-text-box">
+            <div class="project-text-img">
+              <img src="../../img/project/project1.png" alt="image" />
+            </div>
+          </div>
+          <div class="project-text-box">
+            <h2 class="desc">Процесс</h2>
+            <p class="page-text">На протяжении полутора километров располагаются 30 различных локаций. Среди них и интерактивные зоны, 
+              <br class="pc">где посетители могут взаимодействовать с экспозицией, 
+              <br class="pc">и световые или видеопроекционные инсталляции, где гости могут послушать основную легенду и различные фотозоны, где каждый может сделать для себя памятные снимки. Это самый насыщенный в России мультимедийный парк по количеству и разнообразию инсталляций</p>
+          </div>
+        </div>
+      </secton>
+
+      <section class="project-img">
+        <div class="container">
+          <img src="../../img/project/project2.png" alt="image" />
+        </div>
+      </section>
+
+      <section class="project-img">
+        <div class="container">
+          <img src="../../img/project/project3.png" alt="image" />
+        </div>
+      </section>
+
+
+      <secton class="project-text">
+        <div class="container">
+          <div class="project-text-box">
+            <h2 class="desc">Процесс</h2>
+            <p class="page-text">Впервые в мире для подобных проектов в шоу было  добавлено шоу дронов. На центральной площади каждые выходные сезона зрителям демонстрируется кульминационное представление с участием квадрокоптеров. Мы были первыми, кто синхронизировал и объединил в единую визуальную композицию световое шоу, 3D маппинг и шоу дронов.</p>
+          </div>
+          <div class="project-text-box">
+            <div class="project-text-img">
+              <img src="../../img/project/project4.png" alt="image" />
+            </div>
+          </div>
+        </div>
+      </secton>
+
+      
+      <section class="project-img">
+        <div class="container">
+          <img src="../../img/project/project5.png" alt="image" />
+        </div>
+      </section>
+
+      <section class="project-team">
+        <div class="container">
+          <h2 class="team-title desc">Команда проекта</h2>
+          <div class="project-team-container">
+            <div class="project-team-box">
+              <h3 class="desc">Звук</h3>
+              <p class="desc lc">Андрей Титов-Врублевский
+                <br>Антон Расторгуев</p>
+            </div>
+            <div class="project-team-box">
+              <h3 class="desc">Бытовой райдер</h3>
+              <p class="desc lc">Галина Милова</p>
+            </div>
+            <div class="project-team-box">
+              <h3 class="desc">Декорации </h3>
+              <p class="desc lc">Александр Шалухин</p>
+            </div>
+            <div class="project-team-box">
+              <h3 class="desc">Технический директор</h3>
+              <p class="desc lc">Сергей Коноплев</p>
+            </div>
+            <div class="project-team-box">
+              <h3 class="desc">Видео</h3>
+              <p class="desc lc">Сергей Гамалий</p>
+            </div>
+            <div class="project-team-box">
+              <h3 class="desc">Свет</h3>
+              <p class="desc lc">Сергей Коноплев</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="other-project">
+        <div class="container">
+          <h2 class="desc">Другие проекты</h2>
+          <div class="other-project-container swiper">
+            <div class="swiper-wrapper">
+              <div class="other-project-box swiper-slide">
+                <div class="other-project-img">
+                  <img src="../../img/projects/project2.png" alt="image" />
+                </div>
+                <div class="other-project-text">
+                  <h3 class="desc">театральная олимпиада
+                    <br>фестиваль россии и японии</h3>
+                  <p class="desc new">Новый проект</p>
+                </div>
+              </div>
+              <div class="other-project-box swiper-slide">
+                <div class="other-project-img">
+                  <img src="../../img/projects/project4.png" alt="image" />
+                </div>
+                <div class="other-project-text">
+                  <h3 class="desc">
+                    Сад света
+                    <br>Легенда о царице ночи
+                    <br>прогулка по дендрарию
+                    <br>санкт-петербурга</h3>
+                </div>
+              </div>
+              <div class="other-project-box swiper-slide">
+                <div class="other-project-img">
+                  <img src="../../img/projects/project3.png" alt="image" />
+                </div>
+                <div class="other-project-text">
+                  <h3 class="desc">театральная олимпиада
+                    <br>фестиваль россии и японии</h3>
+                  <p class="desc new">Новый проект</p>
+                </div>
+              </div>
+              <div class="other-project-box swiper-slide">
+                <div class="other-project-img">
+                  <img src="../../img/projects/project2.png" alt="image" />
+                </div>
+                <div class="other-project-text">
+                  <h3 class="desc">театральная олимпиада
+                    <br>фестиваль россии и японии</h3>
+                  <p class="desc new">Новый проект</p>
+                </div>
+              </div>
+              <div class="other-project-box swiper-slide">
+                <div class="other-project-img">
+                  <img src="../../img/projects/project4.png" alt="image" />
+                </div>
+                <div class="other-project-text">
+                  <h3 class="desc">
+                    Сад света
+                    <br>Легенда о царице ночи
+                    <br>прогулка по дендрарию
+                    <br>санкт-петербурга</h3>
+                </div>
+              </div>
+              <div class="other-project-box swiper-slide">
+                <div class="other-project-img">
+                  <img src="../../img/projects/project3.png" alt="image" />
+                </div>
+                <div class="other-project-text">
+                  <h3 class="desc">театральная олимпиада
+                    <br>фестиваль россии и японии</h3>
+                  <p class="desc new">Новый проект</p>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+          </div>
+        </div>
+      </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__container">
+        <div class="footer__logo">
+          <img src="../../img/logo.svg" alt="logo" />
+        </div>
+        <nav></nav>
+        <nav class="footer__nav">
+          <a class="footer__nav-link desc">о нас</a>
+          <a class="footer__nav-link desc">проекты</a>
+        </nav>
+        <nav class="footer__nav">
+          <a class="footer__nav-link desc">вакансии</a>
+          <a class="footer__nav-link desc">блог</a>
+          <a class="footer__nav-link desc">контакты</a>
+        </nav>
+        <nav class="footer__nav">
+          <a class="footer__nav-link desc">youtube</a>
+          <a class="footer__nav-link desc">vk</a>
+          <a class="footer__nav-link desc">linkedin</a>
+        </nav>
+        <nav class="footer__nav">
+          <a class="footer__nav-link desc">политика конфиденциальности</a>
+          <a class="footer__nav-link desc">пользовательское соглашение</a>
+          <a class="footer__nav-link desc">согласие на обработку данных</a>
+        </nav>
+      </div>
+      <div class="footer__bottom">
+        <h2 class="desc">© 2024 smartlight</h2>
+      </div>
+  </div>
+  </footer>
+</main>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script src="../../js/script.js"></script>
+<script>
+const swiper = new Swiper('.swiper', {
+  slidesPerView: 3,
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  spaceBetween: 12,
+  breakpoints: {
+    320: {
+      slidesPerView: 1
+    },
+    768: {
+      slidesPerView: 2
+    },
+    1024: {
+      slidesPerView: 3
+    }
+  }
+});
+
+const video = document.getElementById("v");
+const playButton = document.getElementById("b");
+const currentTimeDisplay = document.getElementById("current-time");
+
+let isFirstPlay = true; // Флаг для определения первого запуска
+
+// Функция для форматирования времени
+function formatTime(seconds) {
+    const minutes = Math.floor(seconds / 60);
+    const secs = Math.floor(seconds % 60);
+    return `${minutes < 10 ? '0' : ''}${minutes}:${secs < 10 ? '0' : ''}${secs}`;
+}
+
+// Устанавливаем начальное состояние при загрузке страницы
+video.addEventListener("loadedmetadata", () => {
+    const halfDuration = video.duration / 2;
+    video.currentTime = halfDuration; // Ставим видео на середину
+    currentTimeDisplay.textContent = formatTime(video.duration); // Показываем продолжительность
+});
+
+// Обновляем текущее время на дисплее
+video.addEventListener("timeupdate", () => {
+    currentTimeDisplay.textContent = formatTime(video.currentTime);
+});
+
+// Обработчик кнопки воспроизведения/паузы
+playButton.addEventListener("click", () => {
+    if (video.paused) {
+        if (isFirstPlay) {
+            video.currentTime = 0; // Начинаем с начала только при первом воспроизведении
+            isFirstPlay = false; // Сбрасываем флаг после первого воспроизведения
+        }
+        video.play();
+        video.style.filter = "none"; // Убираем затемнение
+        playButton.innerText = 'пауза';
+    } else {
+        video.pause();
+        playButton.innerText = 'смотреть';
+    }
+});
+</script>
+</body>
+</html>

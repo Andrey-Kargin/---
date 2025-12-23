@@ -1,0 +1,11 @@
+@font-face {
+	font-family: 'CoFoSansMonoTrial-Regular';
+	src: url('./fonts/cofosansmonotrial-regular.woff2') format('woff2'), /* Super Modern Browsers */
+		  url('./fonts/cofosansmonotrial-regular.woff') format('woff'), /* Firefox >= 3.6, any other modern browser */
+}
+
+@font-face {
+  font-family: 'ABC Favorit CYR Variable Unlicensed Trial';
+	src: url('./fonts/ABCFavoritCYR-Variable-Trial.woff2') format('woff2'), /* Super Modern Browsers */
+		  url('./fonts/ABCFavoritCYR-Variable-Trial.woff') format('woff'), /* Firefox >= 3.6, any other modern browser */
+}

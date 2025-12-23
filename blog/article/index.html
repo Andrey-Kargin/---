@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+  <link rel="stylesheet" href="../../index.css?v=1.3">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <title>Smart Light</title>
+</head>
+<body>
+  <header class="header">
+    <!-- <canvas id="canvas"></canvas> -->
+    <div class="container">
+      <a href="../../" class="header__logo">
+        <img src="../../img/logo.svg" alt="logo" />
+      </a>
+      <span class="mobile desc burger">меню</span>
+      <nav class="header__nav">
+        <a href="../../" class="header__nav-link desc">о нас</a>
+        <a href="../../projects/" class="header__nav-link desc">проекты</a>
+        <a href="../../team/" class="header__nav-link desc">команда</a>
+        <a href="../../blog/" class="header__nav-link desc">блог</a>
+        <button class="header__btn pc pt">обсудить проект</button>
+        <div class="header__contacts mobile">
+          <p class="desc">контакты</p>
+          <div class="header__contacts-text">
+            <a href="tel:" class="desc">+7 777 777 77 77</a>
+            <a href="mailto:" class="desc">smartlight@pro</a>
+          </div>
+          <div class="header__contacts-row">
+            <p class="desc">Создайте незабываемое шоу вместе с нами</p>
+            <button class="header__btn">обсудить проект</button>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <div class="popup">
+      <div class="popup__container">
+        <h2 class="popup-form__text title">Обсудить проект</h2>
+        <form class="popup-form">
+          <div class="form-row">
+            <input type="text" class="form__input desc" placeholder="ИМЯ*" />
+            <input type="text" class="form__input desc" placeholder="ФАМИЛИЯ*" />
+          </div>
+          <div class="form-row">
+            <input type="text" class="form__input desc" placeholder="E-MAIL*" />
+            <input type="text" class="form__input desc" placeholder="ТЕЛЕФОН*" />
+          </div>
+
+          <input type="text" class="form__input desc" placeholder="КОМПАНИЯ*" />
+          <textarea class="form__textarea desc" placeholder="РАССКАЖИТЕ О ЗАДАЧЕ*"></textarea>
+          <div class="checkbox-policy">
+            <input class="checkbox__input" type="checkbox" id="1" />
+            <label class="checkbox__label desc" for="1">Да, я согласен получать полезный контент и новости <br class="pt">от Smartlight</label>
+          </div>
+          <div class="checkbox-policy">
+            <input class="checkbox__input" type="checkbox" id="2" />
+            <label class="checkbox__label desc" for="2">Я ДАЮ СОГЛАСИЕ НА ОБРАБОТКУ персональных данных</label>
+          </div>
+          <button type="button" class="form-btn desc">ОТПРАВИТЬ →</button>
+        </form>
+        <div class="desc close-popup">закрыть (Х)</div>
+        <div class="popup-footer">
+          <p class="desc">Вы также можете позвонить <br>или написать нам</p>
+          <div class="popup-column">
+            <a href="tel:" class="desc">+7 777 777 77 77</a>
+            <a href="mailto:smartlight@pro" class="desc">smartlight@pro</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <section class="blog-hero">
+      <div class="container">
+        <h1 class="title page-title">Блог</h1>
+      </div>
+    </section>
+
+    <section class="article-hero">
+      <div class="container">
+        <div class="blog-img">
+          <img src="../../img/blog-page/blog7.png" alt="image" />
+        </div>
+        <div class="blog-text">
+          <h2 class="desc">как мы установили мировой рекорд:<br>свет, команда и процесс</h2>
+          <p class="desc">6 минут</p>
+          <p class="desc">читать</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="article-info">
+      <div class="container">
+        <h2 class="page-text">Как новые медиа трансформируют искусство 
+          <br class="pc">и взаимодействие <br class="pt">в городском пространстве</h2>
+        <h3 class="page-text">На протяжении полутора километров располагаются 30 различных локаций. Среди них и интерактивные зоны, 
+          <br>где посетители могут взаимодействовать с экспозицией, 
+          <br>Цифровые технологии сегодня стали неотъемлемой частью искусства, и Санкт-Петербург готов вновь подтвердить свой статус культурной столицы, запуская новый фестиваль цифровых медиа. В отличие от традиционных фестивалей, это событие фокусируется не на массовом зрелищном эффекте, а на создании площадки для креативного взаимодействия, обмена идеями и открытия новых горизонтов в сфере цифровых медиа. Это пространство для тех, кто ищет вдохновение и готов делиться своими уникальными идеями.
+          <br>На фестивале соберутся талантливые дизайнеры, художники, программисты и медиакреаторы, чтобы показать свое видение будущего медиа и искусства. Это не просто выставка, это интерактивное пространство, где каждый может не только увидеть, но и стать частью процесса создания нового цифрового искусства.</h3>
+      </div>
+    </section>
+
+    <section class="article-gallery">
+      <div class="container">
+        <div class="article-gallery-img">
+          <img src="../../img/project/project1.png" alt="image" />
+        </div>
+        <div class="article-gallery-img">
+          <img src="../../img/project/project1.png" alt="image" />
+        </div>
+      </div>
+    </section>
+
+    <section class="article-text">
+      <div class="container">
+        <div class="article-text-box">
+          <h2 class="desc">Перспективы для креативного сообщества</h2>
+          <p class="page-text">Фестиваль ориентирован на узкую, но креативную аудиторию. Здесь собираются люди, которые мыслят нестандартно, которые хотят изменить будущее медиа и искусства. Это место, где рождаются идеи для новых коллабораций, и где креативщики могут не только вдохновиться, но и найти партнеров для своих проектов.</p>
+        </div>
+        <div class="article-text-box">
+          <h2 class="desc">Место, где встречаются технологии и искусство</h2>
+          <p class="page-text">Фестиваль цифровых медиа в Санкт-Петербурге — это не просто платформа для демонстрации новых технологий, но и исследование границ между искусством и технологией. Инсталляции, представленные на фестивале, охватывают разнообразные формы цифрового искусства — от виртуальной реальности до анимации и 3D-мэппинга.</p>
+        </div>
+        <div class="article-text-box">
+          <h2 class="desc">Интерактивность на новом уровне</h2>
+          <p class="page-text">Главная особенность фестиваля — его глубокая вовлеченность аудитории. Посетители не просто наблюдают за инсталляциями, но активно взаимодействуют с ними. Специально разработанные инсталляции и шоу будут реагировать на движения зрителей, создавая уникальные впечатления для каждого.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="article-img">
+      <div class="container">
+        <img src="../../img/project/project3.png" alt="image" />
+      </div>
+    </section>
+
+    <section class="article-text">
+      <div class="container">
+        <div class="article-text-box">
+          <h2 class="desc">Интерактивность на новом уровне</h2>
+          <p class="page-text">Главная особенность фестиваля — его глубокая вовлеченность аудитории. Посетители не просто наблюдают за инсталляциями, но активно взаимодействуют с ними. Специально разработанные инсталляции и шоу будут реагировать на движения зрителей, создавая уникальные впечатления для каждого.</p>
+          <div class="article-text-row">
+            <p class="desc">автор Статьи</p>
+            <p class="desc">24 августа 2024</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="other-article">
+      <div class="container">
+        <h2 class="desc">Другие проекты</h2>
+        <div class="other-article-container swiper">
+          <div class="swiper-wrapper">
+            <div class="other-article-box swiper-slide">
+              <div class="other-article-img">
+                <img src="../../img/projects/project2.png" alt="image" />
+              </div>
+              <div class="other-article-text">
+                <h3 class="desc">театральная олимпиада
+                  <br>фестиваль россии и японии</h3>
+              </div>
+            </div>
+            <div class="other-article-box swiper-slide">
+              <div class="other-article-img">
+                <img src="../../img/projects/project4.png" alt="image" />
+              </div>
+              <div class="other-article-text">
+                <h3 class="desc">
+                  Сад света
+                  <br>Легенда о царице ночи
+                  <br>прогулка по дендрарию
+                  <br>санкт-петербурга</h3>
+              </div>
+            </div>
+            <div class="other-article-box swiper-slide">
+              <div class="other-article-img">
+                <img src="../../img/projects/project3.png" alt="image" />
+              </div>
+              <div class="other-project-text">
+                <h3 class="desc">театральная олимпиада
+                  <br>фестиваль россии и японии</h3>
+              </div>
+            </div>
+            <div class="other-article-box swiper-slide">
+              <div class="other-article-img">
+                <img src="../../img/projects/project2.png" alt="image" />
+              </div>
+              <div class="other-article-text">
+                <h3 class="desc">театральная олимпиада
+                  <br>фестиваль россии и японии</h3>
+              </div>
+            </div>
+            <div class="other-article-box swiper-slide">
+              <div class="other-article-img">
+                <img src="../../img/projects/project4.png" alt="image" />
+              </div>
+              <div class="other-article-text">
+                <h3 class="desc">
+                  Сад света
+                  <br>Легенда о царице ночи
+                  <br>прогулка по дендрарию
+                  <br>санкт-петербурга</h3>
+              </div>
+            </div>
+            <div class="other-article-box swiper-slide">
+              <div class="other-article-img">
+                <img src="../../img/projects/project3.png" alt="image" />
+              </div>
+              <div class="other-project-text">
+                <h3 class="desc">театральная олимпиада
+                  <br>фестиваль россии и японии</h3>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__container">
+        <div class="footer__logo">
+          <img src="../../img/logo.svg" alt="logo" />
+        </div>
+        <nav></nav>
+        <nav class="footer__nav">
+          <a class="footer__nav-link desc">о нас</a>
+          <a class="footer__nav-link desc">проекты</a>
+        </nav>
+        <nav class="footer__nav">
+          <a class="footer__nav-link desc">вакансии</a>
+          <a class="footer__nav-link desc">блог</a>
+          <a class="footer__nav-link desc">контакты</a>
+        </nav>
+        <nav class="footer__nav">
+          <a class="footer__nav-link desc">youtube</a>
+          <a class="footer__nav-link desc">vk</a>
+          <a class="footer__nav-link desc">linkedin</a>
+        </nav>
+        <nav class="footer__nav">
+          <a class="footer__nav-link desc">политика конфиденциальности</a>
+          <a class="footer__nav-link desc">пользовательское соглашение</a>
+          <a class="footer__nav-link desc">согласие на обработку данных</a>
+        </nav>
+      </div>
+      <div class="footer__bottom">
+        <h2 class="desc">© 2024 smartlight</h2>
+      </div>
+  </div>
+  </footer>
+</main>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script src="../../js/script.js"></script>
+<script>
+  const swiper = new Swiper('.swiper', {
+    slidesPerView: 3,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    spaceBetween: 12,
+    breakpoints: {
+    320: {
+      slidesPerView: 1
+    },
+    768: {
+      slidesPerView: 2
+    },
+    1024: {
+      slidesPerView: 3
+    }
+  }
+  });
+  </script>
+</body>
+</html>

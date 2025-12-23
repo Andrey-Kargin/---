@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../index.css?v=1.3">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <title>Smart Light</title>
+</head>
+<body>
+  <header class="header">
+    <!-- <canvas id="canvas"></canvas> -->
+    <div class="container">
+      <a href="../" class="header__logo">
+        <img src="../img/logo.svg" alt="logo" />
+      </a>
+      <span class="mobile desc burger">меню</span>
+      <nav class="header__nav">
+        <a href="../" class="header__nav-link desc">о нас</a>
+        <a href="../projects/" class="header__nav-link desc">проекты</a>
+        <a class="header__nav-link desc">команда</a>
+        <a href="../blog/" class="header__nav-link desc">блог</a>
+        <button class="header__btn pc pt">обсудить проект</button>
+        <div class="header__contacts mobile">
+          <p class="desc">контакты</p>
+          <div class="header__contacts-text">
+            <a href="tel:" class="desc">+7 777 777 77 77</a>
+            <a href="mailto:" class="desc">smartlight@pro</a>
+          </div>
+          <div class="header__contacts-row">
+            <p class="desc">Создайте незабываемое шоу вместе с нами</p>
+            <button class="header__btn">обсудить проект</button>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main class="team-main">
+    <div class="popup">
+      <div class="popup__container">
+        <h2 class="popup-form__text title">Обсудить проект</h2>
+        <form class="popup-form">
+          <div class="form-row">
+            <input type="text" class="form__input desc" placeholder="ИМЯ*" />
+            <input type="text" class="form__input desc" placeholder="ФАМИЛИЯ*" />
+          </div>
+          <div class="form-row">
+            <input type="text" class="form__input desc" placeholder="E-MAIL*" />
+            <input type="text" class="form__input desc" placeholder="ТЕЛЕФОН*" />
+          </div>
+
+          <input type="text" class="form__input desc" placeholder="КОМПАНИЯ*" />
+          <textarea class="form__textarea desc" placeholder="РАССКАЖИТЕ О ЗАДАЧЕ*"></textarea>
+          <div class="checkbox-policy">
+            <input class="checkbox__input" type="checkbox" id="1" />
+            <label class="checkbox__label desc" for="1">Да, я согласен получать полезный контент и новости <br class="pt">от Smartlight</label>
+          </div>
+          <div class="checkbox-policy">
+            <input class="checkbox__input" type="checkbox" id="2" />
+            <label class="checkbox__label desc" for="2">Я ДАЮ СОГЛАСИЕ НА ОБРАБОТКУ персональных данных</label>
+          </div>
+          <button type="button" class="form-btn desc">ОТПРАВИТЬ →</button>
+        </form>
+        <div class="desc close-popup">закрыть (Х)</div>
+        <div class="popup-footer">
+          <p class="desc">Вы также можете позвонить <br>или написать нам</p>
+          <div class="popup-column">
+            <a href="tel:" class="desc">+7 777 777 77 77</a>
+            <a href="mailto:smartlight@pro" class="desc">smartlight@pro</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <section class="blog-hero">
+      <div class="container">
+        <div class="stripe pc"></div>
+        <div class="stripe pc"></div>
+        <div class="stripe pc"></div>
+        <div class="stripe pc"></div>
+        <div class="stripe pc"></div>
+        <h1 class="title page-title">Команда</h1>
+        <p class="page-text">Наша команда — это креативные художники и инженеры, 
+          <br>объединенные любовью к инновациям, свету и мультимедиа</p>
+      </div>
+    </section>
+
+    <section class="team-img">
+      <div class="container">
+        <!-- <div class="stripe pc"></div>
+        <div class="stripe pc"></div>
+        <div class="stripe pc"></div>
+        <div class="stripe pc"></div>
+        <div class="stripe pc"></div> -->
+        <img src="../img/team.png" alt="image" />
+        <div class="team-popup">
+          <span class="dot"></span>
+          <div class="team-popup-info">
+            <p class="desc">сергей коноплев</p>
+            <p class="desc">технический директор</p>
+          </div>
+        </div>
+        <div class="team-popup">
+          <span class="dot"></span>
+          <div class="team-popup-info">
+            <p class="desc">слава денисенков</p>
+            <p class="desc">видеоинженер</p>
+          </div>
+        </div>
+        <div class="team-popup">
+          <span class="dot"></span>
+          <div class="team-popup-info">
+            <p class="desc">сергей берац</p>
+            <p class="desc">менеджер проектов</p>
+          </div>
+        </div>
+        <div class="team-popup">
+          <span class="dot"></span>
+          <div class="team-popup-info">
+            <p class="desc">святослав оспанов</p>
+            <p class="desc">медиатехник</p>
+          </div>
+        </div>
+        <div class="team-popup">
+          <span class="dot"></span>
+          <div class="team-popup-info">
+            <p class="desc">леонид авакян</p>
+            <p class="desc">главный инженер-проектировщик<br> мультимедиа</p>
+          </div>
+        </div>
+        <div class="team-popup">
+          <span class="dot"></span>
+          <div class="team-popup-info">
+            <p class="desc">максим</p>
+            <p class="desc">медиатехник</p>
+          </div>
+        </div>
+        <div class="team-popup">
+          <span class="dot"></span>
+          <div class="team-popup-info">
+            <p class="desc">геворг арзуманян</p>
+            <p class="desc">коммерческий директор,<br> сооснователь</p>
+          </div>
+        </div>
+        <div class="team-popup">
+          <span class="dot"></span>
+          <div class="team-popup-info">
+            <p class="desc">анна хавер</p>
+            <p class="desc">креативный директор</p>
+          </div>
+        </div>
+        <div class="team-popup">
+          <span class="dot"></span>
+          <div class="team-popup-info">
+            <p class="desc">павел бушуев</p>
+            <p class="desc">арт-директор,<br> художник</p>
+          </div>
+        </div>
+        <div class="team-popup">
+          <span class="dot"></span>
+          <div class="team-popup-info">
+            <p class="desc">глеб матюшин</p>
+            <p class="desc">Генеральный директор,<br> сооснователь</p>
+          </div>
+        </div>
+        <div class="team-popup">
+          <span class="dot"></span>
+          <div class="team-popup-info">
+            <p class="desc">антон шумилов</p>
+            <p class="desc">менеджер проектов</p>
+          </div>
+        </div>
+        <div class="team-popup">
+          <span class="dot"></span>
+          <div class="team-popup-info">
+            <p class="desc">кира горшкова</p>
+            <p class="desc">медиахудожник</p>
+          </div>
+        </div>
+        <div class="team-popup">
+          <span class="dot"></span>
+          <div class="team-popup-info">
+            <p class="desc">степан пектеев</p>
+            <p class="desc">режиссер</p>
+          </div>
+        </div>
+        <div class="team-popup">
+          <span class="dot"></span>
+          <div class="team-popup-info">
+            <p class="desc">артемий кушулун</p>
+            <p class="desc">ведущий видеорежиссер</p>
+          </div>
+        </div>
+        <div class="team-popup">
+          <span class="dot"></span>
+          <div class="team-popup-info">
+            <p class="desc">генриетта лейман</p>
+            <p class="desc">инженер-разработчик</p>
+          </div>
+        </div>
+        <div class="team-popup">
+          <span class="dot"></span>
+          <div class="team-popup-info">
+            <p class="desc">екатерина смирнова</p>
+            <p class="desc">дизайнер медиаконтента</p>
+          </div>
+        </div>
+        <div class="team-popup">
+          <span class="dot"></span>
+          <div class="team-popup-info">
+            <p class="desc">татьяна колесникова</p>
+            <p class="desc">маркетолог</p>
+          </div>
+        </div>
+        <div class="team-popup">
+          <span class="dot"></span>
+          <div class="team-popup-info">
+            <p class="desc">александр патраш</p>
+            <p class="desc">художник по свету</p>
+          </div>
+        </div>
+        <div class="team-popup">
+          <span class="dot"></span>
+          <div class="team-popup-info">
+            <p class="desc">даник пиктурный</p>
+            <p class="desc">режиссер</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="team-info">
+      <div class="container">
+        <div class="stripe pc"></div>
+        <div class="stripe pc"></div>
+        <div class="stripe pc"></div>
+        <div class="stripe pc"></div>
+        <div class="stripe pc"></div>
+        <h2 class="desc wow animate__animated animate__slideInLeft">Команда</h2>
+        <p class="title wow animate__animated animate__slideInUp">Наша команда реализовала большое количество мероприятий: <br class="pc">от небольших конференций до<br class="pt"> событий федерального уровня. <br class="mobile"> работаем по всему миру <br class="mobile">и каждый год участвуем в создании более <br class="mobile">120 мероприятий.</p>
+      </div>
+    </section>
+    <section class="team-members wow animate__animated animate__fadeIn">
+      <nav class="pt mobile team-nav">
+        <p class="desc team-nav-link team-nav-link_active" data-tab="top">топ-менеджмент</p>
+        <p class="desc team-nav-link" data-tab="management">менеджмент</p>
+        <p class="desc team-nav-link" data-tab="creative">креативная команда</p>
+        <p class="desc team-nav-link" data-tab="tech">техническая команда</p>
+      </nav>
+      <div class="container wow animate__animated animate__slideInUp">
+        <div class="stripe pc"></div>
+        <div class="stripe pc"></div>
+        <div class="stripe pc"></div>
+        <div class="stripe pc"></div>
+        <div class="stripe pc"></div>
+        <div class="team-member-box team-top team-member-box_active">
+          <div class="team-member-img">
+            <img src="../img/team/team1.png" alt="image" />
+          </div>
+          <h3 class="desc">глеб матюшин</h3>
+          <p class="desc member-role">Генеральный директор, сооснователь</p>
+        </div>
+
+        <div class="team-member-box team-top team-member-box_active">
+          <div class="team-member-img">
+            <img src="../img/team/team2.png" alt="image" />
+          </div>
+          <h3 class="desc">геворг арзуманян</h3>
+          <p class="desc member-role">коммерческий директор, сооснователь</p>
+        </div>
+
+        <div class="team-member-box team-top team-member-box_active">
+          <div class="team-member-img">
+            <img src="../img/team/team3.png" alt="image" />
+          </div>
+          <h3 class="desc">анна хавер</h3>
+          <p class="desc member-role">креативный директор</p>
+        </div>
+
+        <div class="team-member-box team-top team-member-box_active">
+          <div class="team-member-img">
+            <img src="../img/team/team23.png" alt="image" />
+          </div>
+          <h3 class="desc">Евгений Степанов</h3>
+          <p class="desc member-role">Директор по развитию</p>
+        </div>
+
+        <div class="team-member-box">
+          <div class="team-member-img">
+            <img src="../img/team/team4.png" alt="image" />
+          </div>
+          <h3 class="desc">сергей коноплев</h3>
+          <p class="desc member-role">технический директор</p>
+        </div>
+
+        <div class="team-member-title">
+          <p class="desc">менеджмент</p>
+        </div>
+
+        <div class="team-member-box">
+          <div class="team-member-img">
+            <img src="../img/team/team21.png" alt="image" />
+          </div>
+          <h3 class="desc">Элеонора Смит</h3>
+          <p class="desc member-role">Контент-маркетолог</p>
+        </div>
+
+        <div class="team-member-box">
+          <div class="team-member-img">
+            <img src="../img/team/team19.png" alt="image" />
+          </div>
+          <h3 class="desc">Мельникова Софья</h3>
+          <p class="desc member-role">Контент-маркетолог</p>
+        </div>
+
+        <div class="team-member-box">
+          <div class="team-member-img">
+            <img src="../img/team/team22.png" alt="image" />
+          </div>
+          <h3 class="desc">Александр Куценко</h3>
+          <p class="desc member-role">Продюсер проектов</p>
+        </div>
+
+        <div class="team-member-box">
+          <div class="team-member-img">
+            <img src="../img/team/team20.jpg" alt="image" />
+          </div>
+          <h3 class="desc">Диана Куровски</h3>
+          <p class="desc member-role">Продюсер проектов</p>
+        </div>
+
+        <div class="team-member-box">
+          <div class="team-member-img">
+            <img src="../img/team/team6.png" alt="image" />
+          </div>
+          <h3 class="desc">сергей берац</h3>
+          <p class="desc member-role">менеджер проектов</p>
+        </div>
+
+        <div class="team-member-box">
+          <div class="team-member-img">
+            <img src="../img/team/team8.png" alt="image" />
+          </div>
+          <h3 class="desc">павел бушуев</h3>
+          <p class="desc member-role">арт-директор, художник</p>
+        </div>
+
+        <div class="team-member-box">
+          <div class="team-member-img">
+            <img src="../img/team/team9.png" alt="image" />
+          </div>
+          <h3 class="desc">степан пектеев</h3>
+          <p class="desc member-role">режиссер</p>
+        </div>
+
+        <div class="team-member-box">
+          <div class="team-member-img">
+            <img src="../img/team/team10.png" alt="image" />
+          </div>
+          <h3 class="desc">даник пиктурный</h3>
+          <p class="desc member-role">режиссер</p>
+        </div>
+
+        <div class="team-member-title">
+          <p class="desc">креативная команда</p>
+        </div>
+
+        <div class="team-member-box">
+          <div class="team-member-img">
+            <img src="../img/team/team24.png" alt="image" />
+          </div>
+          <h3 class="desc">Анна Спарк </h3>
+          <p class="desc member-role">Продюсер видео продакшена</p>
+        </div>
+
+        <div class="team-member-box">
+          <div class="team-member-img">
+            <img src="../img/team/team11.png" alt="image" />
+          </div>
+          <h3 class="desc">кира горшкова</h3>
+          <p class="desc member-role">медиахудожник</p>
+        </div>
+
+        <div class="team-member-box">
+          <div class="team-member-img">
+            <img src="../img/team/team12.png" alt="image" />
+          </div>
+          <h3 class="desc">генриетта лейман</h3>
+          <p class="desc member-role">инженер-разработчик</p>
+        </div>
+
+        <div class="team-member-box">
+          <div class="team-member-img">
+            <img src="../img/team/team5.png" alt="image" />
+          </div>
+          <h3 class="desc">екатерина смирнова</h3>
+          <p class="desc member-role">дизайнер медиаконтента</p>
+        </div>
+
+        <div class="team-member-box">
+          <div class="team-member-img">
+            <img src="../img/team/team13.png" alt="image" />
+          </div>
+          <h3 class="desc">леонид авакян</h3>
+          <p class="desc member-role">главный инженер-проектировщик мультимедиа</p>
+        </div>
+
+        <div class="team-member-title">
+          <p class="desc">техническая команда</p>
+        </div>
+
+        <div class="team-member-box">
+          <div class="team-member-img">
+            <img src="../img/team/team14.png" alt="image" />
+          </div>
+          <h3 class="desc">артемий кушулун</h3>
+          <p class="desc member-role">ведущий видеоинженер</p>
+        </div>
+
+        <div class="team-member-box">
+          <div class="team-member-img">
+            <img src="../img/team/team15.png" alt="image" />
+          </div>
+          <h3 class="desc">слава денисенков</h3>
+          <p class="desc member-role">видеоинженер</p>
+        </div>
+
+        <div class="team-member-box">
+          <div class="team-member-img">
+            <img src="../img/team/team16.png" alt="image" />
+          </div>
+          <h3 class="desc">александр патраш</h3>
+          <p class="desc member-role">художник по свету</p>
+        </div>
+
+        <div class="team-member-box">
+          <div class="team-member-img">
+            <img src="../img/team/team17.png" alt="image" />
+          </div>
+          <h3 class="desc">максим </h3>
+          <p class="desc member-role">медиатехник
+          </p>
+        </div>
+
+        <div class="team-member-box">
+          <div class="team-member-img">
+            <img src="../img/team/team18.png" alt="image" />
+          </div>
+          <h3 class="desc">Святослав Оспанов</h3>
+          <p class="desc member-role">медиатехник
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="team-info">
+      <div class="container">
+        <div class="stripe pc"></div>
+        <div class="stripe pc"></div>
+        <div class="stripe pc"></div>
+        <div class="stripe pc"></div>
+        <div class="stripe pc"></div>
+        <h2 class="desc">карьера</h2>
+        <p class="title">Работа в Smartlight — это амбициозные и грандиозные проекты,
+          <br>талантливая и активная команда, свободное выражения творчества и поддержка карьерного развития. 
+          <br>Присылайте своё резюме и мы вскоре с вами свяжемся.</p>
+      </div>
+    </section>
+
+    <section class="career">
+      <div class="container">
+        <div class="stripe pc"></div>
+        <div class="stripe pc"></div>
+        <div class="stripe pc"></div>
+        <div class="stripe pc"></div>
+        <div class="stripe pc"></div>
+        <a class="career-info">
+          <p class="desc">вакансия</p>
+          <p class="desc">местоположение</p>
+          <p class="desc">категория</p>
+        </a>
+        <a class="career-vacancy">
+          <p class="career-name">Senior Art Director</p>
+          <p class="desc career-city">Москва</p>
+          <p class="desc career-category">дизайн</p>
+        </a>
+        <a class="career-vacancy">
+          <p class="career-name">Design Intern</p>
+          <p class="desc career-city">Санкт-Петербург</p>
+          <p class="desc career-category">дизайн</p>
+        </a>
+        <a class="career-vacancy">
+          <p class="career-name">Marketing Manager</p>
+          <p class="desc career-city">Санкт-Петербург</p>
+          <p class="desc career-category">маркетинг</p>
+        </a>
+        <a class="career-vacancy">
+          <p class="career-name">Studio Manager</p>
+          <p class="desc career-city">Москва</p>
+          <p class="desc career-category">маркетинг</p>
+        </a>
+        <a class="career-vacancy">
+          <p class="career-name">Motion Designer</p>
+          <p class="desc career-city">Санкт-Петербург</p>
+          <p class="desc career-category">Менеджмент</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="team-video">
+      <div class="container">
+        <div class="stripe pc"></div>
+        <div class="stripe pc"></div>
+        <div class="stripe pc"></div>
+        <div class="stripe pc"></div>
+        <div class="stripe pc"></div>
+        <img src="../img/team/video.png" alt="video" />
+      </div>
+    </section>
+  </main>
+  
+  <footer class="footer">
+    <div class="container">
+      <div class="stripe pc"></div>
+      <div class="stripe pc"></div>
+      <div class="stripe pc"></div>
+      <div class="stripe pc"></div>
+      <div class="stripe pc"></div>
+      <div class="footer__container">
+        <div class="footer__logo">
+          <img src="../img/logo.svg" alt="logo" />
+        </div>
+        <nav></nav>
+        <nav class="footer__nav">
+          <a class="footer__nav-link desc">о нас</a>
+          <a class="footer__nav-link desc">проекты</a>
+        </nav>
+        <nav class="footer__nav">
+          <a class="footer__nav-link desc">вакансии</a>
+          <a class="footer__nav-link desc">блог</a>
+          <a class="footer__nav-link desc">контакты</a>
+        </nav>
+        <nav class="footer__nav">
+          <a class="footer__nav-link desc">youtube</a>
+          <a class="footer__nav-link desc">vk</a>
+          <a class="footer__nav-link desc">linkedin</a>
+        </nav>
+        <nav class="footer__nav">
+          <a class="footer__nav-link desc">политика конфиденциальности</a>
+          <a class="footer__nav-link desc">пользовательское соглашение</a>
+          <a class="footer__nav-link desc">согласие на обработку данных</a>
+        </nav>
+      </div>
+      <div class="footer__bottom">
+        <h2 class="desc">© 2024 smartlight</h2>
+      </div>
+  </div>
+  </footer>
+<script src="../js/script.js"></script>
+<script src="../js/team.js"></script>
+</body>
+</html>
